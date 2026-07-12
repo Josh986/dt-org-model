@@ -377,6 +377,52 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
 .role-badge.ba{background:rgba(37,99,235,0.18);color:var(--blue-ll);border:1px solid rgba(96,165,250,0.4);}
 .role-badge.sa{background:rgba(13,148,136,0.18);color:var(--teal-ll);border:1px solid rgba(45,212,191,0.4);}
 .role-badge.shared{background:rgba(120,140,170,0.15);color:#a8bcd8;border:1px solid rgba(120,140,170,0.35);}
+/* ===== Burnout Scenario ===== */
+.scn-lead{display:flex;gap:16px;align-items:center;background:rgba(14,35,64,0.6);border:1.5px solid rgba(37,99,235,0.3);border-radius:14px;padding:18px 22px;margin-bottom:26px;}
+.scn-avatar{width:54px;height:54px;min-width:54px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#0d9488);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;font-weight:800;}
+.scn-lead p{color:#a8c0dd;font-size:14.5px;line-height:1.55;margin:0;}
+.scn-lead b{color:#dbe8fb;}
+.scn-lead .cap-pill{display:inline-block;background:rgba(245,158,11,0.16);border:1px solid rgba(245,158,11,0.4);color:#fbbf24;font-weight:800;font-size:12.5px;padding:2px 10px;border-radius:8px;}
+.scn-cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;}
+@media(max-width:900px){.scn-cols{grid-template-columns:1fr;}}
+.scn-panel{background:rgba(14,35,64,0.72);border:1.5px solid rgba(37,99,235,0.4);border-radius:16px;padding:20px 22px;backdrop-filter:blur(6px);}
+.scn-panel.danger{border-color:rgba(239,68,68,0.45);box-shadow:0 8px 28px rgba(239,68,68,0.12);}
+.scn-panel.good{border-color:rgba(45,212,191,0.45);box-shadow:0 8px 28px rgba(13,148,136,0.14);}
+.scn-ph{display:flex;align-items:center;gap:11px;margin-bottom:8px;font-size:15px;font-weight:800;color:#dbe8fb;}
+.scn-ph .ci{width:32px;height:32px;min-width:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;}
+.scn-ph .ci.red{background:rgba(239,68,68,0.16);color:#f87171;}
+.scn-ph .ci.grn{background:rgba(45,212,191,0.16);color:#2dd4bf;}
+.scn-sub{color:#7f96b6;font-size:12.5px;margin:0 0 12px;line-height:1.45;}
+.scn-item{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(37,99,235,0.14);align-items:flex-start;}
+.scn-item:last-child{border-bottom:none;}
+.scn-num{width:24px;height:24px;min-width:24px;border-radius:50%;background:rgba(37,99,235,0.18);color:#93c5fd;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.scn-it-txt{flex:1;}
+.scn-it-txt b{display:block;color:#e8f0fb;font-size:13.5px;margin-bottom:2px;font-weight:700;}
+.scn-it-txt span{color:#8298b8;font-size:12px;line-height:1.45;}
+.scn-pts{font-size:12.5px;font-weight:800;white-space:nowrap;margin-top:1px;}
+.scn-pts.hot{color:#f87171;}
+.scn-pts.ok{color:#f59e0b;}
+.scn-tag{display:inline-block;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:1px 6px;border-radius:6px;margin-left:5px;vertical-align:middle;}
+.scn-tag.bu{background:rgba(37,99,235,0.18);color:#93c5fd;}
+.scn-tag.dt{background:rgba(13,148,136,0.2);color:#5eead4;}
+.scn-tag.urg{background:rgba(239,68,68,0.2);color:#f87171;}
+.scn-total{display:flex;justify-content:space-between;align-items:center;margin-top:6px;padding-top:13px;border-top:2px solid rgba(239,68,68,0.3);}
+.scn-total.grn-top{border-top-color:rgba(45,212,191,0.35);}
+.scn-total .lbl{color:#c0d2ea;font-size:13px;font-weight:700;}
+.scn-total .big{font-size:22px;font-weight:900;}
+.scn-total .big.hot{color:#f87171;}
+.scn-total .big.ok{color:#2dd4bf;}
+.scn-callout{border-radius:10px;padding:11px 14px;margin-top:15px;font-size:12.5px;line-height:1.5;display:flex;gap:9px;align-items:flex-start;}
+.scn-callout i{margin-top:2px;flex-shrink:0;}
+.scn-callout.red{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.35);color:#fca5a5;}
+.scn-callout.grn{background:rgba(13,148,136,0.1);border:1px solid rgba(45,212,191,0.35);color:#99f6e4;}
+.scn-mechs{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+@media(max-width:900px){.scn-mechs{grid-template-columns:1fr;}}
+.scn-mech{background:rgba(8,15,30,0.6);border:1.5px solid #1a3050;border-radius:12px;padding:16px 18px;}
+.scn-mech .mh{display:flex;align-items:center;gap:9px;color:#dbe8fb;font-size:13.5px;font-weight:800;margin-bottom:6px;}
+.scn-mech .mh i{color:#2dd4bf;font-size:15px;}
+.scn-mech p{margin:0;color:#8fa8c9;font-size:12.5px;line-height:1.5;}
+.scn-mech p em{color:#93c5fd;font-style:normal;font-weight:700;}
 .cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
 .cap-card{
   background:rgba(14,35,64,0.72);border:1.5px solid rgba(37,99,235,0.4);border-radius:16px;
@@ -768,6 +814,54 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
       <i class="fa-solid fa-shield-halved"></i>
       <p><strong>Why buckets, not a single ranked list:</strong> The allocation is the guardrail that operationalizes the two-PO split. It prevents big migration projects from consuming all of Pod 5, and stops business features from starving the tech debt that keeps the apps alive — making "DT can't be ignored, but also can't hijack the transformation" a measurable commitment rather than a hope.</p>
     </div>
+  </section>
+
+  <!-- ============ BURNOUT SCENARIO ============ -->
+  <section class="section cap-section">
+    <div class="section-head"><span class="bar"></span><h2>Scenario: A Sprint in Josh's Shoes</h2></div>
+    <p class="section-sub">Five urgent things hit one BA at once. Here's how the model protects him from drowning — without working nights &amp; weekends.</p>
+
+    <div class="scn-lead">
+      <div class="scn-avatar">JB</div>
+      <p><b>Josh, a Business Analyst,</b> starts sprint planning with five things landing on his plate at the same time — a safety dashboard, feature validations, a "migrate everything" mega-initiative, and an urgent fire. His committed capacity for the sprint is just <span class="cap-pill">15 story points ≈ 15 days</span>. Left unmanaged, this is a burnout in the making.</p>
+    </div>
+
+    <div class="scn-cols">
+      <!-- The overload -->
+      <div class="scn-panel danger">
+        <div class="scn-ph"><span class="ci red"><i class="fa-solid fa-fire"></i></span>The Overload — everything, all at once</div>
+        <p class="scn-sub">If Josh simply tried to do it all, the raw demand looks like this:</p>
+        <div class="scn-item"><div class="scn-num">1</div><div class="scn-it-txt"><b>AMP — KPI safety dashboard <span class="scn-tag bu">BU-pull</span></b><span>Business Unit wants a new safety KPI dashboard built</span></div><div class="scn-pts hot">~5 pts</div></div>
+        <div class="scn-item"><div class="scn-num">2</div><div class="scn-it-txt"><b>Galaxy — validate DT features + write stories <span class="scn-tag dt">DT-push</span></b><span>DT is pushing features; needs validation &amp; user stories for refinement</span></div><div class="scn-pts hot">~3 pts</div></div>
+        <div class="scn-item"><div class="scn-num">3</div><div class="scn-it-txt"><b>Sigma — migrate ALL Power BI reports <span class="scn-tag dt">DT-push</span></b><span>Huge end-of-year initiative — the entire reporting estate</span></div><div class="scn-pts hot">~40+ pts</div></div>
+        <div class="scn-item"><div class="scn-num">4</div><div class="scn-it-txt"><b>AMP Edge — validate new DT features <span class="scn-tag dt">DT-push</span></b><span>DT pushing features that the business must validate</span></div><div class="scn-pts hot">~3 pts</div></div>
+        <div class="scn-item"><div class="scn-num">5</div><div class="scn-it-txt"><b>EVO — urgent request <span class="scn-tag urg">Urgent</span></b><span>An unplanned fire that "needs to happen now"</span></div><div class="scn-pts hot">~4 pts</div></div>
+        <div class="scn-total"><span class="lbl">Raw demand vs. 15-pt capacity</span><span class="big hot">~55 pts</span></div>
+        <div class="scn-callout red"><i class="fa-solid fa-triangle-exclamation"></i><div><strong>3.7× over capacity.</strong> Trying to absorb this is exactly how a BA burns out — context-switching all day, doing everything halfway, and making up the gap with nights &amp; weekends.</div></div>
+      </div>
+
+      <!-- What actually lands -->
+      <div class="scn-panel good">
+        <div class="scn-ph"><span class="ci grn"><i class="fa-solid fa-shield-heart"></i></span>What the Model Lets Land</div>
+        <p class="scn-sub">POs &amp; Champions slice demand at planning to fit the buckets — Josh commits to a realistic 15.</p>
+        <div class="scn-item"><div class="scn-num">1</div><div class="scn-it-txt"><b>AMP safety dashboard <span class="scn-tag bu">Business Growth</span></b><span>The high-value BU ask — takes the biggest slice</span></div><div class="scn-pts ok">5 pts</div></div>
+        <div class="scn-item"><div class="scn-num">2</div><div class="scn-it-txt"><b>Galaxy validation + stories <span class="scn-tag bu">Business Growth</span></b><span>Validation &amp; refinement counted as real, bounded work</span></div><div class="scn-pts ok">2 pts</div></div>
+        <div class="scn-item"><div class="scn-num">4</div><div class="scn-it-txt"><b>AMP Edge validation <span class="scn-tag bu">Business Growth</span></b><span>Fits the remaining Business Growth capacity</span></div><div class="scn-pts ok">2 pts</div></div>
+        <div class="scn-item"><div class="scn-num">3</div><div class="scn-it-txt"><b>Sigma migration — <em style="color:#5eead4;font-style:normal;">discovery slice only</em> <span class="scn-tag dt">Tech Enablement</span></b><span>Just this sprint's slice; full migration roadmapped across the year</span></div><div class="scn-pts ok">3 pts</div></div>
+        <div class="scn-item"><div class="scn-num">5</div><div class="scn-it-txt"><b>Urgent EVO — <em style="color:#f87171;font-style:normal;">swapped in</em> <span class="scn-tag urg">Ops Support</span></b><span>PO trades out a lower-priority item to make room — nothing stacked on top</span></div><div class="scn-pts ok">1.5 pts</div></div>
+        <div class="scn-item"><div class="scn-num"><i class="fa-solid fa-lock" style="font-size:10px;"></i></div><div class="scn-it-txt"><b>Innovation / discovery reserve <span class="scn-tag bu" style="background:rgba(139,92,246,0.2);color:#c4b5fd;">Protected</span></b><span>Kept free so the pod isn't 100% reactive</span></div><div class="scn-pts ok">1.5 pts</div></div>
+        <div class="scn-total grn-top"><span class="lbl">Committed sprint total</span><span class="big ok">15 pts</span></div>
+        <div class="scn-callout grn"><i class="fa-solid fa-circle-check"></i><div><strong>A full but achievable sprint.</strong> Everything that didn't fit stays visible in the backlog — roadmapped and re-prioritized next planning, not dropped and not crammed.</div></div>
+      </div>
+    </div>
+
+    <!-- Why it saves him -->
+    <ul class="scn-mechs">
+      <li class="scn-mech"><div class="mh"><i class="fa-solid fa-ruler-combined"></i>Hard capacity ceiling</div><p>15 points is a <em>wall</em>, not a target. Demand of 55 can't be crammed into it — the overflow becomes <em>visible</em> instead of quietly absorbed by Josh's evenings.</p></li>
+      <li class="scn-mech"><div class="mh"><i class="fa-solid fa-users-gear"></i>POs &amp; Champions triage — not Josh</div><p>The "not this sprint" decisions are made <em>with leadership</em> at planning. Josh never has to personally fight off five stakeholders — the political &amp; emotional load leaves his shoulders.</p></li>
+      <li class="scn-mech"><div class="mh"><i class="fa-solid fa-layer-group"></i>Buckets cap any one stream</div><p>The "huge" Sigma migration can only claim its <em>Tech-Enablement slice</em> (~3 pts) per sprint. Sliced across the year, a mega-initiative can never swallow Josh whole in one go.</p></li>
+      <li class="scn-mech"><div class="mh"><i class="fa-solid fa-right-left"></i>Urgent = trade, not stack</div><p>The urgent EVO fire <em>swaps out</em> work of equal size — it doesn't get piled onto an already-full plate. Sustainable pace is defended by design.</p></li>
+    </ul>
   </section>
 
 </div>
