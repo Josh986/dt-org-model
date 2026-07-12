@@ -365,6 +365,14 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
   color:#8fa8c9;font-size:14px;line-height:1.55;
 }
 .cap-intro i{color:var(--blue-l);font-size:16px;margin-top:2px;flex-shrink:0;}
+.rgt-legend{
+  display:flex;flex-wrap:wrap;gap:10px 14px;margin:0 0 22px;
+  background:#080f1e;border:1.5px solid #1a3050;border-radius:12px;padding:14px 20px;
+}
+.rgt-item{display:flex;align-items:center;gap:8px;flex:1;min-width:210px;}
+.rgt-item .swatch{width:14px;height:14px;min-width:14px;border-radius:4px;margin:0;}
+.rgt-item b{color:#dbe8fb;font-size:13.5px;font-weight:800;}
+.rgt-item .rgt-def{color:#6a80a0;font-size:12px;}
 .cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
 .cap-card{
   background:rgba(14,35,64,0.72);border:1.5px solid rgba(37,99,235,0.4);border-radius:16px;
@@ -688,10 +696,18 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
   <!-- ============ CAPACITY ALLOCATION ============ -->
   <section class="section cap-section">
     <div class="section-head"><span class="bar"></span><h2>Capacity Allocation Strategy</h2></div>
-    <p class="section-sub">How each PO divides pod capacity into fixed "buckets" so no single type of work dominates.</p>
+    <p class="section-sub">A <strong style="color:#93c5fd;">Run · Grow · Transform</strong> model — so every category of work has protected capacity and none can crowd out the others.</p>
     <div class="cap-intro">
       <i class="fa-solid fa-lightbulb"></i>
-      <div>POs don't just rank requests 1–100. They reserve a <strong style="color:#93c5fd;">percentage of capacity</strong> for each category of work — guaranteeing technical health and innovation aren't crowded out by business demand, while ensuring the transformation isn't hijacked by tech projects. Percentages are a starting point, tuned each planning cycle.</div>
+      <div>POs don't just rank requests 1–100. Because this is a <em style="color:#93c5fd;">transformation</em> org, each PO reserves a percentage of pod capacity across four investment classes. Critically, <strong style="color:#93c5fd;">Grow</strong> maps to the <strong style="color:#60a5fa;">BU-pull stream</strong> and <strong style="color:#5eead4;">Transform</strong> maps to the <strong style="color:#2dd4bf;">DT-push stream</strong> — so the allocation directly quantifies the reactive-vs-proactive balance. Percentages are steady-state targets, revisited each planning increment.</div>
+    </div>
+
+    <!-- RGT framework legend -->
+    <div class="rgt-legend">
+      <div class="rgt-item"><span class="swatch sw-amber"></span><b>Run</b><span class="rgt-def">Keep the lights on — support &amp; KTLO</span></div>
+      <div class="rgt-item"><span class="swatch sw-blue"></span><b>Grow</b><span class="rgt-def">Incremental business value · <em style="color:#60a5fa;">BU-pull</em></span></div>
+      <div class="rgt-item"><span class="swatch sw-teal"></span><b>Transform</b><span class="rgt-def">Migrations, upgrades, roadmap · <em style="color:#2dd4bf;">DT-push</em></span></div>
+      <div class="rgt-item"><span class="swatch sw-purple"></span><b>Explore</b><span class="rgt-def">CI experiments &amp; discovery spikes</span></div>
     </div>
 
     <div class="cap-grid">
@@ -704,18 +720,18 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
             <div class="csub2">Pods 1–4 · BUs 1–4</div>
           </div>
         </div>
-        <p class="cap-tension">Skews to business demand — no large migration backlog pushing on this track.</p>
+        <p class="cap-tension">"Run &amp; Grow the Business" — demand-driven, owns live BU operations, no migration backlog pushing on it.</p>
         <div class="cap-bar">
-          <div class="cap-seg seg-blue" style="flex:65;"><span>65%</span></div>
-          <div class="cap-seg seg-amber" style="flex:15;"><span>15%</span></div>
+          <div class="cap-seg seg-blue" style="flex:55;"><span>55%</span></div>
+          <div class="cap-seg seg-amber" style="flex:25;"><span>25%</span></div>
           <div class="cap-seg seg-teal" style="flex:12;"><span>12%</span></div>
           <div class="cap-seg seg-purple" style="flex:8;"><span>8%</span></div>
         </div>
         <div class="cap-rows">
-          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">65%</div><div class="rtext"><b>Business Growth &amp; Pain Points</b><span>Workflow fixes &amp; process improvements across BUs 1–4</span></div></div>
-          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">15%</div><div class="rtext"><b>Operational Support</b><span>Keeping current processes &amp; tools running (KTLO)</span></div></div>
-          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">12%</div><div class="rtext"><b>Technical Enablement &amp; Debt</b><span>Data cleanup &amp; integrations that speed future work</span></div></div>
-          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">8%</div><div class="rtext"><b>Innovation &amp; Discovery</b><span>Mini-discovery spikes on new business ideas</span></div></div>
+          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">55%</div><div class="rtext"><b>Grow <span style="color:#60a5fa;font-weight:700;">· BU-pull</span></b><span>Workflow fixes &amp; process improvements across BUs 1–4</span></div></div>
+          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">25%</div><div class="rtext"><b>Run</b><span>Keeping current BU processes &amp; tools running (KTLO)</span></div></div>
+          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">12%</div><div class="rtext"><b>Transform</b><span>Data cleanup &amp; integrations that unlock future work</span></div></div>
+          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">8%</div><div class="rtext"><b>Explore</b><span>Mini-discovery spikes on new business ideas</span></div></div>
         </div>
       </div>
 
@@ -728,25 +744,25 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
             <div class="csub2">Pod 5 · 5 Apps + DT Team</div>
           </div>
         </div>
-        <p class="cap-tension">Balances two competing streams — reactive BU features vs. proactive DT initiatives.</p>
+        <p class="cap-tension">"Transform the Enterprise" — <strong style="color:#c4a8e0;">Grow &amp; Transform held equal at 35/35</strong> so neither stream starves the other.</p>
         <div class="cap-bar">
-          <div class="cap-seg seg-blue" style="flex:50;"><span>50%</span></div>
-          <div class="cap-seg seg-teal" style="flex:25;"><span>25%</span></div>
-          <div class="cap-seg seg-amber" style="flex:15;"><span>15%</span></div>
+          <div class="cap-seg seg-blue" style="flex:35;"><span>35%</span></div>
+          <div class="cap-seg seg-teal" style="flex:35;"><span>35%</span></div>
+          <div class="cap-seg seg-amber" style="flex:20;"><span>20%</span></div>
           <div class="cap-seg seg-purple" style="flex:10;"><span>10%</span></div>
         </div>
         <div class="cap-rows">
-          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">50%</div><div class="rtext"><b>Business Feature Requests <span style="color:#60a5fa;font-weight:700;">· BU Stream</span></b><span>New capabilities across Galaxy, Evo Edge, Evo Automate, Amp Edge, Sigma</span></div></div>
-          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">25%</div><div class="rtext"><b>Strategic Initiatives &amp; Migrations <span style="color:#2dd4bf;font-weight:700;">· DT Stream</span></b><span>Platform migrations, version upgrades &amp; DT Roadmap projects</span></div></div>
-          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">15%</div><div class="rtext"><b>Operational Support</b><span>Keeping the 5 apps running — bug fixes, patches, KTLO</span></div></div>
-          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">10%</div><div class="rtext"><b>Innovation &amp; Discovery</b><span>High-risk/high-reward spikes &amp; CI mini-discovery by BA/SA</span></div></div>
+          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">35%</div><div class="rtext"><b>Grow <span style="color:#60a5fa;font-weight:700;">· BU-pull</span></b><span>New features across Galaxy, Evo Edge, Evo Automate, Amp Edge, Sigma</span></div></div>
+          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">35%</div><div class="rtext"><b>Transform <span style="color:#2dd4bf;font-weight:700;">· DT-push</span></b><span>Platform migrations, version upgrades &amp; DT Roadmap projects</span></div></div>
+          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">20%</div><div class="rtext"><b>Run</b><span>Support load across all 5 apps — bug fixes, patches, KTLO</span></div></div>
+          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">10%</div><div class="rtext"><b>Explore</b><span>CI experiments &amp; high-risk/high-reward discovery by BA/SA</span></div></div>
         </div>
       </div>
     </div>
 
     <div class="cap-note">
       <i class="fa-solid fa-shield-halved"></i>
-      <p><strong>Why buckets, not a single ranked list:</strong> The allocation is the guardrail that operationalizes the two-PO split. It prevents big migration projects from consuming all of Pod 5, and stops business features from starving the tech debt that keeps the apps alive — making "DT can't be ignored, but also can't hijack the transformation" a measurable commitment rather than a hope.</p>
+      <p><strong>Why Run · Grow · Transform:</strong> A generic "tech debt" bucket lets transformation work quietly get raided. Making <strong>Transform</strong> a first-class, protected class — and holding it equal to Grow on Pod 5 — operationalizes the two-PO split: it stops migrations from consuming all of Pod 5, and stops business features from starving the platform work the apps depend on. <em style="color:#8298b8;">Note: 35/35 is a steady-state target — during an active migration push, tilt Pod 5 toward Transform (e.g. 45/25) for a few increments, then rebalance.</em></p>
     </div>
   </section>
 
