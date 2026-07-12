@@ -936,97 +936,120 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
   <!-- ============ BURNOUT SCENARIO ============ -->
   <section class="section cap-section">
     <div class="section-head"><span class="bar"></span><h2>Scenario: A Sprint in Josh's Shoes</h2></div>
-    <p class="section-sub">A worked, end-to-end example — follow five real requests through the model, from the moment they're raised to the moment they're delivered.</p>
+    <p class="section-sub">A worked, end-to-end example — follow five real requests through the 7-step Request Flow, from origination to delivery.</p>
 
     <!-- Meet Josh -->
     <div class="scn-lead">
       <div class="scn-avatar">JB</div>
-      <p><b>Meet Josh</b> — a <b>Business Analyst</b> on a delivery pod. Working software gets built in two-week <b>sprints</b>, and a pod estimates work in <b>story points</b> (1 point ≈ 1 day of effort). Josh can realistically commit to <span class="cap-pill">15 story points ≈ 15 days</span> in a sprint. One Monday, <b>five different requests</b> all land pointing at him at once. Here's how the model turns that pile-up into a calm, deliverable sprint — instead of a burnout.</p>
+      <p><b>Meet Josh</b> — a <b>Business Analyst</b> on <b>Pod 4</b>, supporting the <b>Ops &amp; Services</b> business area. He works in two-week <b>sprints</b> and estimates work in <b>story points</b> (1 point ≈ 1 day of effort). Josh can realistically commit to <span class="cap-pill">15 story points per sprint</span>. One Monday, <b>five different requests</b> all surface that could point at him. Here's how the model turns what could be a 55-point pile-up into a calm, deliverable 15-point sprint — by following the process.</p>
     </div>
 
     <!-- Step-by-step walkthrough -->
     <div class="wt">
 
-      <!-- 1: requests raised -->
+      <!-- 1: Requests Originate -->
       <div class="wt-step">
         <div class="wt-dot">1</div>
-        <div class="wt-card red">
-          <div class="wt-h">Five requests are raised <span class="tag amber">The pile-up</span></div>
-          <p class="wt-desc">They come from different directions: some are <em>pulled</em> by the business (a Business Unit needs something), some are <em>pushed</em> by the Digital Transformation (DT) team (strategic tech work), and one is an urgent fire. On paper, this is what everyone wants from Josh:</p>
+        <div class="wt-card">
+          <div class="wt-h"><i class="fa-solid fa-circle-dot" style="color:#60a5fa;"></i> Requests Originate <span class="tag blue">Step 1</span></div>
+          <p class="wt-desc">Five requests surface from two different streams. <b>Some are pulled by Business Units</b> (they need a feature or a fix). <b>Others are pushed by the internal DT team</b> (strategic platform work, migrations, or proactive tech initiatives):</p>
           <div class="wt-rows">
-            <div class="wt-row"><span class="rk">REQ-1</span><span class="wt-mini bu">Business</span><span class="rt">AMP app — build a new safety KPI dashboard</span><span class="rp hot">~5 pts</span></div>
-            <div class="wt-row"><span class="rk">REQ-2</span><span class="wt-mini dt">DT-push</span><span class="rt">Galaxy app — validate new features &amp; write user stories</span><span class="rp hot">~4 pts</span></div>
-            <div class="wt-row"><span class="rk">REQ-3</span><span class="wt-mini dt">DT-push</span><span class="rt">Sigma — migrate <b>all</b> Power BI reports (end-of-year program)</span><span class="rp hot">~40 pts</span></div>
-            <div class="wt-row"><span class="rk">REQ-4</span><span class="wt-mini dt">DT-push</span><span class="rt">AMP Edge app — validate new DT features with the business</span><span class="rp hot">~4 pts</span></div>
-            <div class="wt-row"><span class="rk">REQ-5</span><span class="wt-mini urg">Urgent</span><span class="rt">EVO app — an unplanned, "need-it-now" fix</span><span class="rp hot">~2 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-1</span><span class="wt-mini bu">BU-pull</span><span class="rt"><b>Ops &amp; Services BU</b> needs a new safety KPI dashboard built in AMP</span><span class="rp grey">~5 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-2</span><span class="wt-mini dt">DT-push</span><span class="rt"><b>DT Team</b> pushed new Galaxy features — need business validation + user stories</span><span class="rp grey">~4 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-3</span><span class="wt-mini dt">DT-push</span><span class="rt"><b>DT Team</b> surfaced a Sigma migration program: move <b>all</b> Power BI reports (end-of-year roadmap initiative)</span><span class="rp grey">~40 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-4</span><span class="wt-mini dt">DT-push</span><span class="rt"><b>DT Team</b> pushed new AMP Edge features — need business validation</span><span class="rp grey">~4 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-5</span><span class="wt-mini urg">Urgent</span><span class="rt"><b>Ops &amp; Services BU</b> raised an urgent EVO app fix — "need it now"</span><span class="rp grey">~2 pts</span></div>
           </div>
-          <div class="wt-tot"><span>Raw demand vs. Josh's 15-pt capacity</span><span class="v hot">~55 pts &nbsp;·&nbsp; 3.7×</span></div>
-          <p class="wt-desc" style="margin-top:11px;color:#fca5a5;"><i class="fa-solid fa-triangle-exclamation"></i> If Josh simply tried to absorb all of it, this is exactly how a BA burns out — context-switching all day, doing everything halfway, and making up the gap on nights &amp; weekends. The model never lets it get to that point. Here's why:</p>
+          <p class="wt-desc" style="margin-top:11px;color:#9db4d4;"><b>Raw total: ~55 points.</b> If all of it simply landed on Josh (who has 15-pt capacity), he'd burn out. The process prevents that from happening.</p>
         </div>
       </div>
 
-      <!-- 2: front door -->
+      <!-- 2: Backlog Intake (Jira front door) -->
       <div class="wt-step">
         <div class="wt-dot">2</div>
         <div class="wt-card">
-          <div class="wt-h"><i class="fa-solid fa-door-open" style="color:#60a5fa;"></i> Every request enters ONE front door <span class="tag blue">Jira intake</span></div>
-          <p class="wt-desc">No hallway asks, no side-channel emails, no "quick favors" straight to Josh. <b>All five are filed as Jira tickets</b>, each tagged with <em>App / Area</em>, <em>Type</em> (feature · migration · support · urgent), <em>Requestor</em>, and <em>Priority</em>. Those tags are what let the team route the work correctly in the next step — and they make the <b>full demand visible in one place</b> instead of hidden in five people's inboxes.</p>
+          <div class="wt-h"><i class="fa-solid fa-door-open" style="color:#60a5fa;"></i> Backlog Intake <span class="tag blue">Step 2 · Jira</span></div>
+          <p class="wt-desc"><b>All five are filed as Jira tickets</b> — no hallway asks, no side emails, no "quick favors" straight to Josh. Each ticket is tagged with <em>App/Area</em>, <em>Type</em> (feature · migration · support · urgent), <em>Requestor</em>, and <em>Priority</em>. The two POs gather them into their respective backlogs:</p>
+          <div class="wt-rows">
+            <div class="wt-row"><span class="rk">REQ-1</span><span class="rt">AMP safety dashboard — it's a <b>reporting/dashboarding</b> request from a BU</span><span class="wt-mini re">→ Business PO</span></div>
+            <div class="wt-row"><span class="rk">REQ-2</span><span class="rt">Galaxy validation + stories — DT-pushed app-dev work</span><span class="wt-mini kept">→ App Dev PO</span></div>
+            <div class="wt-row"><span class="rk">REQ-3</span><span class="rt">Sigma migration — DT-pushed strategic initiative (multi-quarter program)</span><span class="wt-mini kept">→ App Dev PO</span></div>
+            <div class="wt-row"><span class="rk">REQ-4</span><span class="rt">AMP Edge validation — DT-pushed app-dev work</span><span class="wt-mini kept">→ App Dev PO</span></div>
+            <div class="wt-row"><span class="rk">REQ-5</span><span class="rt">Urgent EVO fix — BU-pulled app-dev work</span><span class="wt-mini kept">→ App Dev PO</span></div>
+          </div>
+          <p class="wt-desc" style="margin-top:11px;"><b>Business PO</b> owns REQ-1 (reporting/dashboards for BUs). <b>App Dev PO</b> owns REQ-2/3/4/5 (app features &amp; DT strategic work). The full demand is now <em>visible in one place</em> instead of scattered across five inboxes.</p>
         </div>
       </div>
 
-      <!-- 3: route to POs -->
+      <!-- 3: Sprint Planning (POs + Champions collaborate) -->
       <div class="wt-step">
         <div class="wt-dot">3</div>
-        <div class="wt-card">
-          <div class="wt-h"><i class="fa-solid fa-shuffle" style="color:#60a5fa;"></i> Product Owners triage &amp; route — not Josh <span class="tag blue">Who owns it</span></div>
-          <p class="wt-desc">Two <b>Product Owners (POs)</b> own the backlogs: a <b>Business PO</b> (business-reporting &amp; Business-Unit pain points) and an <b>App Dev PO</b> (app features, migrations &amp; platform work). Together with the Business Champions they sort every ticket to the right owner. Crucially, <em>Josh doesn't personally fight off five stakeholders</em> — leadership makes the call.</p>
+        <div class="wt-card amber">
+          <div class="wt-h"><i class="fa-solid fa-users-gear" style="color:#fbbf24;"></i> Sprint Planning <span class="tag amber">Step 3 · Collaboration</span></div>
+          <p class="wt-desc">The <b>App Dev PO</b> and the <b>BU Champions</b> meet to <em>approve and prioritize backlog items together</em>. This is the step where capacity planning happens — and where Josh is protected from overload. The PO brings the four App Dev requests (REQ-2/3/4/5) to the table and says: <em>"We have ~50 points of demand, but the pods have ~15 points of capacity each. What fits this sprint, what waits, and what gets reallocated?"</em></p>
           <div class="wt-rows">
-            <div class="wt-row"><span class="rk">REQ-1</span><span class="rt">AMP safety dashboard — it's a <b>reporting</b> need for a Business Unit</span><span class="wt-mini re">→ Business PO</span></div>
-            <div class="wt-row"><span class="rk">REQ-2</span><span class="rt">Galaxy validation + stories — genuine app-dev work</span><span class="wt-mini kept">→ App Dev PO · Josh</span></div>
-            <div class="wt-row"><span class="rk">REQ-3</span><span class="rt">Sigma migration — a multi-quarter <b>program</b></span><span class="wt-mini road">→ App Dev PO · split</span></div>
-            <div class="wt-row"><span class="rk">REQ-4</span><span class="rt">AMP Edge validation — genuine app-dev work</span><span class="wt-mini kept">→ App Dev PO · Josh</span></div>
-            <div class="wt-row"><span class="rk">REQ-5</span><span class="rt">Urgent EVO fix — app-dev, but Josh is full</span><span class="wt-mini re">→ App Dev PO · teammate</span></div>
+            <div class="wt-row"><span class="wt-mini kept">Approved</span><span class="rt"><b>REQ-2 (Galaxy validation)</b> — real app-dev work, high business value → Sprint</span></div>
+            <div class="wt-row"><span class="wt-mini kept">Approved</span><span class="rt"><b>REQ-4 (AMP Edge validation)</b> — real app-dev work, aligned with DT roadmap → Sprint</span></div>
+            <div class="wt-row"><span class="wt-mini road">Sliced</span><span class="rt"><b>REQ-3 (Sigma migration)</b> — too big; carve out a discovery slice for this sprint, roadmap the rest across the year</span></div>
+            <div class="wt-row"><span class="wt-mini re">Load-balance</span><span class="rt"><b>REQ-5 (Urgent EVO)</b> — it's urgent, but Josh's plate is full; route it to a Pod 5 teammate with capacity</span></div>
           </div>
+          <p class="wt-desc" style="margin-top:11px;color:#fbbf24;"><i class="fa-solid fa-shield-heart"></i> <b>Crucially</b> — Josh doesn't personally fight off five stakeholders. The PO and Champions make the "not this sprint" calls <em>with leadership</em>, taking the political &amp; emotional load off Josh's shoulders.</p>
         </div>
       </div>
 
-      <!-- 4: reallocate -->
+      <!-- 4: Finalize Priority -->
       <div class="wt-step">
         <div class="wt-dot">4</div>
-        <div class="wt-card amber">
-          <div class="wt-h"><i class="fa-solid fa-arrow-right-arrow-left" style="color:#fbbf24;"></i> Reallocate what's on the wrong plate <span class="tag amber">3 moves</span></div>
-          <p class="wt-desc">This is the step that saves Josh. Three of the five requests are <em>moved off him</em> before the sprint even starts:</p>
+        <div class="wt-card">
+          <div class="wt-h"><i class="fa-solid fa-list-ol" style="color:#60a5fa;"></i> Finalize Priority <span class="tag blue">Step 4</span></div>
+          <p class="wt-desc">The approved and sequenced work is now ready for assignment. The <b>App Dev PO</b> balances <em>reactive BU demand</em> (REQ-2, REQ-4) against <em>proactive DT initiatives</em> (REQ-3 slice). The <b>capacity buckets</b> come into play here:</p>
           <div class="wt-rows">
-            <div class="wt-row"><span class="wt-mini re">Move 1</span><span class="rt"><b>AMP dashboard →</b> handed to the <b>Business PO</b>'s pods (reporting isn't app-dev work). Never touches Josh.</span></div>
-            <div class="wt-row"><span class="wt-mini road">Move 2</span><span class="rt"><b>Sigma migration →</b> sliced into a year-long <b>roadmap</b>; only a small discovery slice comes to Josh now, the bulk is sequenced across future sprints.</span></div>
-            <div class="wt-row"><span class="wt-mini re">Move 3</span><span class="rt"><b>Urgent EVO →</b> load-balanced to a <b>Pod teammate</b> with room, instead of being stacked on top of Josh's full plate.</span></div>
+            <div class="wt-row"><span class="rk">REQ-2</span><span class="rt">Galaxy validation + stories</span><span class="rp ok">4 pts</span><span class="wt-mini bu">60% Business Growth</span></div>
+            <div class="wt-row"><span class="rk">REQ-4</span><span class="rt">AMP Edge validation</span><span class="rp ok">4 pts</span><span class="wt-mini bu">60% Business Growth</span></div>
+            <div class="wt-row"><span class="rk">REQ-3</span><span class="rt">Sigma — discovery slice only</span><span class="rp ok">4 pts</span><span class="wt-mini dt">20% Tech Enablement</span></div>
+            <div class="wt-row"><span class="rk">—</span><span class="rt">Ceremonies &amp; backlog refinement</span><span class="rp ok">1.5 pts</span><span class="wt-mini urg">10% Ops Support</span></div>
+            <div class="wt-row"><span class="rk">—</span><span class="rt"><i class="fa-solid fa-lock" style="font-size:10px;"></i> Innovation / discovery reserve</span><span class="rp ok">1.5 pts</span><span class="wt-mini road">10% Innovation</span></div>
           </div>
+          <div class="wt-tot" style="border-top-color:rgba(96,165,250,0.35);"><span>Sequenced &amp; bucketed</span><span class="v ok">15 pts &nbsp;✓</span></div>
+          <p class="wt-desc" style="margin-top:11px;">The buckets cap any single stream from taking over. The Sigma migration can only claim its <em>Tech Enablement slice</em> — it can't swallow the whole sprint.</p>
         </div>
       </div>
 
-      <!-- 5: fit to capacity -->
+      <!-- 5: Assign to Pod -->
       <div class="wt-step">
         <div class="wt-dot teal">5</div>
         <div class="wt-card teal">
-          <div class="wt-h"><i class="fa-solid fa-layer-group" style="color:#5eead4;"></i> Fit the rest to Josh's 15-point capacity <span class="tag teal">The sprint</span></div>
-          <p class="wt-desc">Only the work that genuinely belongs to Josh reaches planning — and the pod's <b>capacity buckets</b> keep any single stream from taking over. He commits to a <b>full but achievable 15 points</b>:</p>
+          <div class="wt-h"><i class="fa-solid fa-user-tag" style="color:#5eead4;"></i> Assign to Pod <span class="tag teal">Step 5</span></div>
+          <p class="wt-desc">Work is assigned to the right pod based on <b>Business Unit</b> or <b>app domain</b>. Josh is on <b>Pod 4 (Ops &amp; Services)</b>, so the sequenced 15-point sprint lands on his plate — a full but achievable load. Meanwhile:</p>
           <div class="wt-rows">
-            <div class="wt-row"><span class="rk">REQ-2</span><span class="rt">Galaxy — validate features + write stories</span><span class="rp ok">4 pts</span></div>
-            <div class="wt-row"><span class="rk">REQ-4</span><span class="rt">AMP Edge — validate DT features with the business</span><span class="rp ok">4 pts</span></div>
-            <div class="wt-row"><span class="rk">REQ-3</span><span class="rt">Sigma — <b>discovery slice only</b> (rest on the roadmap)</span><span class="rp ok">4 pts</span></div>
-            <div class="wt-row"><span class="rk">—</span><span class="rt">Ceremonies &amp; backlog refinement (standups, planning, grooming)</span><span class="rp ok">1.5 pts</span></div>
-            <div class="wt-row"><span class="rk">—</span><span class="rt"><i class="fa-solid fa-lock" style="font-size:10px;"></i> Innovation / discovery reserve (kept free on purpose)</span><span class="rp ok">1.5 pts</span></div>
+            <div class="wt-row"><span class="wt-mini kept">Pod 4 · Josh</span><span class="rt">REQ-2, REQ-4, REQ-3 slice, ceremonies, innovation reserve</span><span class="rp ok">15 pts</span></div>
+            <div class="wt-row"><span class="wt-mini re">Pod 5 teammate</span><span class="rt">REQ-5 (urgent EVO fix) — load-balanced to a teammate with room</span><span class="rp ok">~2 pts</span></div>
+            <div class="wt-row"><span class="wt-mini re">Business pods</span><span class="rt">REQ-1 (AMP safety dashboard) — handled by Business PO's pods</span><span class="rp ok">~5 pts</span></div>
           </div>
-          <div class="wt-tot" style="border-top-color:rgba(45,212,191,0.35);"><span>Committed sprint total</span><span class="v ok">15 pts &nbsp;✓</span></div>
+          <p class="wt-desc" style="margin-top:11px;color:#5eead4;"><i class="fa-solid fa-circle-check"></i> <b>Nothing was dropped.</b> All five requests are being handled — just not all by Josh, and not all this sprint.</p>
         </div>
       </div>
 
-      <!-- 6: deliver -->
+      <!-- 6: Deliver -->
       <div class="wt-step">
         <div class="wt-dot teal">6</div>
         <div class="wt-card teal">
-          <div class="wt-h"><i class="fa-solid fa-circle-check" style="color:#5eead4;"></i> Deliver, then feed back <span class="tag teal">Outcome</span></div>
-          <p class="wt-desc">Josh and his Systems Analyst partner deliver the committed 15 points at a sustainable pace. The reallocated items are being handled elsewhere — <b>nothing was dropped</b>: the AMP dashboard ships from a business pod, the EVO fix from a teammate, and the Sigma program marches on via the roadmap. Completed work flows back to the requestors and surfaces the next round of requests — and the whole cycle repeats, in control.</p>
+          <div class="wt-h"><i class="fa-solid fa-truck-fast" style="color:#5eead4;"></i> Deliver <span class="tag teal">Step 6</span></div>
+          <p class="wt-desc">Josh and his <b>Systems Analyst partner</b> (Joshua Ly) execute the 15 points at a sustainable pace. No nights, no weekends, no burnout. Output is delivered back to the requestors:</p>
+          <div class="wt-rows">
+            <div class="wt-row"><span class="wt-mini kept">Delivered</span><span class="rt">Galaxy features validated + user stories written → back to DT Team &amp; BU</span></div>
+            <div class="wt-row"><span class="wt-mini kept">Delivered</span><span class="rt">AMP Edge features validated → back to DT Team &amp; BU</span></div>
+            <div class="wt-row"><span class="wt-mini kept">Delivered</span><span class="rt">Sigma migration — discovery findings documented → feeds next sprint's roadmap slice</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7: Feedback Loop -->
+      <div class="wt-step">
+        <div class="wt-dot teal">7</div>
+        <div class="wt-card teal">
+          <div class="wt-h"><i class="fa-solid fa-arrow-rotate-left" style="color:#5eead4;"></i> Feedback Loop <span class="tag teal">Step 7</span></div>
+          <p class="wt-desc">Completed work triggers the next round of requests. The Galaxy &amp; AMP Edge validations surface follow-up feature asks. The Sigma discovery findings feed the next sprint's migration slice. The <b>App Dev PO is notified</b>, and the whole cycle repeats — sustainably, in control, with full visibility.</p>
         </div>
       </div>
 
