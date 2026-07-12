@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Future State Operating Model — DT Team</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a1628;
+  --navy-2:#0c1e38;
+  --navy-3:#0e2340;
+  --blue:#2563eb;
+  --blue-l:#60a5fa;
+  --blue-ll:#93c5fd;
+  --teal:#0d9488;
+  --teal-l:#2dd4bf;
+  --teal-ll:#5eead4;
+  --amber:#d97706;
+  --amber-l:#f59e0b;
+  --amber-bg:#150c00;
+  --muted:#3d5e82;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--navy);
+  color:#e8eefb;
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+}
+/* Dot grid overlay */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:radial-gradient(circle, rgba(37,99,235,0.14) 1px, transparent 1px);
+  background-size:30px 30px;
+  pointer-events:none;
+  z-index:0;
+}
+.wrap{position:relative;z-index:1;max-width:1500px;margin:0 auto;padding:0 32px 60px;}
+
+/* ============ HEADER / HERO ============ */
+header.hero{
+  position:relative;
+  z-index:1;
+  padding:56px 32px 48px;
+  text-align:center;
+  background:
+    radial-gradient(ellipse 900px 320px at 50% -10%, rgba(37,99,235,0.28), transparent 70%),
+    linear-gradient(180deg,#0d2247 0%, #0b1a34 55%, #0a1628 100%);
+  border-bottom:2.5px solid var(--blue);
+  box-shadow:0 20px 60px -20px rgba(37,99,235,0.35);
+  overflow:hidden;
+}
+header.hero::after{
+  content:"";
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle, rgba(96,165,250,0.10) 1px, transparent 1px);
+  background-size:26px 26px;
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:2;max-width:1000px;margin:0 auto;}
+.hero .eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  color:var(--blue-l);font-size:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  margin-bottom:18px;
+}
+.hero .eyebrow i{font-size:15px;}
+.hero h1{
+  font-size:clamp(34px,5vw,56px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-0.01em;
+  text-shadow:0 4px 30px rgba(37,99,235,0.4);
+}
+.hero .subtitle{
+  margin-top:16px;font-size:clamp(15px,1.6vw,19px);font-weight:500;color:#9db8dd;letter-spacing:0.02em;
+}
+.badges{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:30px;}
+.pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:11px 22px;border-radius:40px;font-size:14px;font-weight:700;letter-spacing:0.02em;
+  backdrop-filter:blur(8px);transition:all .2s ease;cursor:default;
+}
+.pill.blue{background:rgba(37,99,235,0.14);border:1.5px solid rgba(96,165,250,0.5);color:var(--blue-ll);
+  box-shadow:0 0 0 rgba(37,99,235,0);}
+.pill.teal{background:rgba(13,148,136,0.14);border:1.5px solid rgba(45,212,191,0.5);color:var(--teal-ll);
+  box-shadow:0 0 0 rgba(13,148,136,0);}
+.pill.blue:hover{box-shadow:0 8px 26px rgba(37,99,235,0.4);transform:translateY(-2px);}
+.pill.teal:hover{box-shadow:0 8px 26px rgba(13,148,136,0.4);transform:translateY(-2px);}
+.pill .dot{width:11px;height:11px;border-radius:50%;}
+.pill.blue .dot{background:var(--blue-l);box-shadow:0 0 10px var(--blue-l);}
+.pill.teal .dot{background:var(--teal-l);box-shadow:0 0 10px var(--teal-l);}
+
+/* ============ SECTION HEADINGS ============ */
+.section{margin-top:56px;}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
+.section-head .bar{width:4px;height:30px;border-radius:3px;background:linear-gradient(180deg,var(--blue-l),var(--blue));}
+.section-head h2{font-size:24px;font-weight:800;color:#fff;letter-spacing:0.01em;}
+.section-sub{color:#7d94b8;font-size:14px;margin:0 0 30px 18px;}
+
+/* ============ LAYER LABEL ============ */
+.layer-label{
+  display:flex;align-items:center;gap:12px;margin:0 0 18px;
+}
+.layer-label .num{
+  width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:900;color:#fff;background:rgba(37,99,235,0.25);border:1px solid rgba(96,165,250,0.4);
+}
+.layer-label span{font-size:12px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#5f7ba3;}
+.layer-label .line{flex:1;height:1px;background:linear-gradient(90deg,rgba(96,165,250,0.3),transparent);}
+
+/* ============ GRID / CARDS ============ */
+.bu-row{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+.card{
+  background:rgba(14,35,64,0.72);
+  border:1.5px solid rgba(37,99,235,0.45);
+  border-radius:14px;
+  backdrop-filter:blur(6px);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  position:relative;
+}
+.card:hover{transform:translateY(-6px);}
+
+/* BU cards */
+.bu-card{padding:16px 14px 18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 6px 22px rgba(37,99,235,0.14);}
+.bu-card:hover{box-shadow:0 14px 40px rgba(37,99,235,0.4);border-color:var(--blue-l);}
+.bu-tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;min-height:22px;}
+.tag{font-size:9.5px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:0.03em;white-space:nowrap;}
+.tag.amber{background:rgba(217,119,6,0.16);border:1px solid rgba(245,158,11,0.5);color:var(--amber-l);}
+.tag.blue{background:rgba(37,99,235,0.16);border:1px solid rgba(96,165,250,0.5);color:var(--blue-ll);}
+.bu-icon{width:44px;height:44px;border-radius:12px;margin:2px auto 0;display:flex;align-items:center;justify-content:center;
+  background:rgba(37,99,235,0.14);border:1px solid rgba(96,165,250,0.35);}
+.bu-icon i{color:var(--blue-l);font-size:19px;}
+.bu-title{text-align:center;color:#dbe8fb;font-size:15px;font-weight:800;line-height:1.2;}
+.bu-desc{text-align:center;color:var(--muted);font-size:10.5px;font-weight:600;line-height:1.5;}
+/* BU5 dashed dimmed */
+.bu-card.tbd{border:1.5px dashed #2d4a6a;background:rgba(9,28,48,0.6);opacity:0.82;box-shadow:none;}
+.bu-card.tbd:hover{opacity:1;box-shadow:0 10px 30px rgba(45,74,106,0.35);border-color:#3a5c7a;}
+.bu-card.tbd .bu-icon{background:rgba(45,74,106,0.15);border-color:#2d4a6a;}
+.bu-card.tbd .bu-icon i{color:#3a5c7a;}
+.bu-card.tbd .bu-title{color:#4a7090;}
+.tbd-pill{align-self:center;background:#0b1f30;border:1px dashed #2d4a6a;color:#3a6080;font-size:10px;font-weight:700;
+  padding:3px 12px;border-radius:14px;letter-spacing:0.05em;}
+
+/* connector vertical lines */
+.champ-connect-row{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+.vconnect{height:26px;display:flex;justify-content:center;}
+.vconnect::before{content:"";width:2px;height:100%;background:linear-gradient(180deg,rgba(245,158,11,0.7),rgba(245,158,11,0.3));}
+
+/* Champion cards */
+.champ-row{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;position:relative;}
+.champ-card{
+  padding:16px 14px;display:flex;flex-direction:column;align-items:center;gap:7px;
+  background:var(--amber-bg);
+  border:1.5px solid rgba(217,119,6,0.6);
+  box-shadow:0 6px 22px rgba(217,119,6,0.12);
+}
+.champ-card:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(245,158,11,0.42);border-color:var(--amber-l);}
+.champ-card i.crown{color:var(--amber-l);font-size:22px;filter:drop-shadow(0 0 8px rgba(245,158,11,0.4));}
+.champ-card .ctitle{color:var(--amber-l);font-size:15px;font-weight:800;}
+.champ-card .csub{color:#9c7838;font-size:10.5px;font-weight:600;text-align:center;line-height:1.4;}
+.champ-empty{visibility:hidden;}
+
+/* amber dashed horizontal connector across champions */
+.champ-bus-wrap{position:relative;height:40px;margin-top:8px;}
+.champ-bus{position:absolute;left:10%;right:30%;top:0;height:1px;border-top:2px dashed rgba(245,158,11,0.55);}
+.champ-down{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;position:absolute;inset:0;}
+.champ-down .arrow{display:flex;justify-content:center;align-items:flex-start;}
+.champ-down .arrow::before{content:"";width:2px;height:26px;background:linear-gradient(180deg,rgba(245,158,11,0.6),rgba(245,158,11,0.25));}
+
+/* KEY callout */
+.key-callout{
+  margin:6px auto 0;max-width:760px;
+  background:linear-gradient(90deg,rgba(217,119,6,0.12),rgba(217,119,6,0.05));
+  border:1.5px solid rgba(245,158,11,0.55);border-radius:12px;
+  padding:14px 22px;display:flex;align-items:center;gap:12px;justify-content:center;
+  box-shadow:0 6px 24px rgba(217,119,6,0.14);
+}
+.key-callout i{color:var(--amber-l);font-size:18px;}
+.key-callout p{color:#f3d9a8;font-size:14px;font-weight:600;line-height:1.4;}
+.key-callout strong{color:var(--amber-l);font-weight:800;}
+
+/* down arrows from key to POs */
+.key-to-po{display:flex;justify-content:center;gap:340px;margin:14px 0 6px;}
+.key-to-po .a::before{content:"";display:block;width:2px;height:28px;background:linear-gradient(180deg,rgba(245,158,11,0.6),rgba(96,165,250,0.5));}
+
+/* PO layer */
+.po-layer{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;}
+.po-divider{width:0;border-left:2px dashed rgba(96,165,250,0.25);margin:0 26px;}
+.po-card{
+  background:var(--navy-2);border:2px solid #3b82f6;border-radius:16px;overflow:hidden;
+  box-shadow:0 10px 34px rgba(59,130,246,0.2);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.po-card:hover{transform:translateY(-5px);box-shadow:0 18px 50px rgba(59,130,246,0.45);border-color:var(--blue-l);}
+.po-head{background:linear-gradient(90deg,#163060 0%,#1c3e7a 100%);padding:16px 20px;display:flex;align-items:center;gap:14px;}
+.po-head .picon{width:42px;height:42px;min-width:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:rgba(59,130,246,0.22);border:1.5px solid rgba(59,130,246,0.5);}
+.po-head .picon i{color:var(--blue-l);font-size:19px;}
+.po-head .ptitle{color:#fff;font-size:19px;font-weight:800;letter-spacing:0.02em;}
+.po-head .psub{color:#7ba0cf;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-top:2px;}
+.po-body{padding:18px 20px;display:flex;flex-direction:column;gap:11px;}
+.po-bullet{display:flex;align-items:flex-start;gap:11px;}
+.po-bullet .b{width:19px;min-width:19px;height:19px;background:#142a50;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.po-bullet .b i{color:var(--blue-l);font-size:8px;}
+.po-bullet span{color:#c5d8ee;font-size:14px;line-height:1.4;}
+.po-bullet strong{color:var(--blue-ll);}
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding-left:30px;margin-top:-2px;}
+.chip{background:#0b2f44;border:1px solid #0e7490;color:#67e8f9;font-size:12px;padding:4px 11px;border-radius:14px;font-weight:600;}
+.dt-box{
+  margin-top:6px;background:#091f30;border:1.5px solid var(--teal);border-radius:12px;padding:13px 16px;
+  box-shadow:0 4px 16px rgba(14,116,144,0.25);
+}
+.dt-box .dth{display:flex;align-items:center;gap:9px;margin-bottom:9px;}
+.dt-box .dth i{color:var(--teal-l);font-size:15px;}
+.dt-box .dth span{color:var(--teal-ll);font-size:13px;font-weight:800;letter-spacing:0.02em;}
+.dt-badges{display:flex;flex-wrap:wrap;gap:7px;}
+.tbadge{background:#072820;border:1px solid rgba(13,148,136,0.55);color:var(--teal-ll);font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:12px;}
+
+/* PO -> Pod connectors */
+.po-to-pod{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin:22px 0 4px;}
+.po-to-pod .conn{display:flex;justify-content:center;}
+.po-to-pod .conn.blue::before{content:"";width:2px;height:28px;background:linear-gradient(180deg,rgba(59,130,246,0.7),rgba(59,130,246,0.3));}
+.po-to-pod .conn.teal::before{content:"";width:2px;height:28px;background:linear-gradient(180deg,rgba(13,148,136,0.8),rgba(13,148,136,0.35));}
+
+/* Pod layer */
+.pod-row{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;align-items:start;}
+.pod-card{
+  background:var(--navy-2);border:2px solid #1d4ed8;border-radius:14px;overflow:hidden;
+  box-shadow:0 6px 24px rgba(29,78,216,0.22);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.pod-card:hover{transform:translateY(-6px);box-shadow:0 16px 46px rgba(29,78,216,0.5);border-color:var(--blue-l);}
+.pod-head{background:linear-gradient(90deg,#163060,#1c3e7a);padding:13px 16px;display:flex;align-items:center;justify-content:space-between;}
+.pod-head .pn{color:#fff;font-size:16px;font-weight:900;}
+.pod-head .pd{color:#6f9bcb;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;}
+.pod-badge{background:rgba(59,130,246,0.18);color:var(--blue-ll);font-size:9px;font-weight:700;padding:3px 8px;border-radius:10px;border:1px solid rgba(59,130,246,0.3);}
+.pod-body{padding:13px 13px;display:flex;flex-direction:column;gap:9px;}
+.person{background:#0d1f38;border:1px solid rgba(59,130,246,0.28);border-radius:9px;padding:9px 11px;display:flex;align-items:center;gap:11px;
+  transition:background .2s ease,border-color .2s ease;}
+.person:hover{background:#112748;border-color:rgba(96,165,250,0.5);}
+.avatar{width:32px;height:32px;min-width:32px;background:#142a50;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.avatar i{color:var(--blue-l);font-size:13px;}
+.person .pname{color:#dde9f8;font-size:13px;font-weight:700;line-height:1.2;}
+.person .prole{color:#5b7fa5;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-top:1px;}
+.sa-needed{background:rgba(217,119,6,0.12);border:1.5px dashed rgba(245,158,11,0.55);border-radius:9px;padding:9px 11px;display:flex;align-items:center;gap:11px;}
+.sa-needed .avatar{background:#2a1a03;}
+.sa-needed .avatar i{color:var(--amber-l);}
+.sa-needed .pname{color:var(--amber-l);}
+.sa-needed .prole{color:#9c7838;}
+
+/* Pod 5 teal */
+.pod-card.teal{border:2.5px solid var(--teal);background:linear-gradient(155deg,#071e22 0%,#092a28 100%);box-shadow:0 8px 30px rgba(13,148,136,0.35);}
+.pod-card.teal:hover{box-shadow:0 18px 52px rgba(13,148,136,0.55);border-color:var(--teal-l);}
+.pod-card.teal .pod-head{background:linear-gradient(90deg,#0c4040,#0e5045);}
+.pod-card.teal .pd{color:#4db8a8;}
+.pod-card.teal .pod-badge{background:rgba(13,148,136,0.25);color:var(--teal-ll);border-color:rgba(45,212,191,0.4);}
+.pod5-group{border-top:1px solid rgba(13,148,136,0.22);padding-top:10px;}
+.pod5-group .glabel{color:var(--teal);font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:7px;}
+.pod5-chips{display:flex;flex-wrap:wrap;gap:6px;}
+.pod5-chip{background:#072820;border:1px solid rgba(13,148,136,0.5);color:var(--teal-ll);font-size:11px;padding:3px 9px;border-radius:10px;font-weight:600;}
+.pod5-handles{display:flex;flex-direction:column;gap:5px;}
+.pod5-handles .h{display:flex;align-items:center;gap:8px;color:#8fc4bb;font-size:12px;}
+.pod5-handles .h .d{width:5px;height:5px;min-width:5px;border-radius:50%;background:var(--teal);}
+
+/* Pod 5 wrapper spanning under App Dev PO — placed in its own column area */
+.pod5-wrap{grid-column:5;}
+
+/* ============ REQUEST FLOW ============ */
+.flow-section{
+  margin-top:64px;border-radius:22px;padding:44px 38px 48px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 700px 300px at 20% 0%, rgba(13,148,136,0.16), transparent 70%),
+    linear-gradient(180deg,#08211f 0%, #071c22 100%);
+  border:1.5px solid rgba(13,148,136,0.35);
+  box-shadow:0 20px 60px -30px rgba(13,148,136,0.4);
+}
+.flow-section .section-head .bar{background:linear-gradient(180deg,var(--teal-l),var(--teal));}
+.flow-steps{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin-top:26px;}
+.step{
+  flex:1;min-width:150px;background:rgba(9,32,32,0.66);border:1.5px solid rgba(13,148,136,0.4);border-radius:14px;
+  padding:20px 16px 18px;position:relative;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.step:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(13,148,136,0.4);border-color:var(--teal-l);}
+.step .snum{
+  width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(145deg,var(--amber-l),var(--amber));color:#241300;font-size:17px;font-weight:900;
+  box-shadow:0 4px 14px rgba(245,158,11,0.4);margin-bottom:12px;
+}
+.step h4{color:#fff;font-size:15px;font-weight:800;margin-bottom:6px;line-height:1.2;}
+.step p{color:#89b3ac;font-size:12.5px;line-height:1.5;}
+.step-arrow{display:flex;align-items:center;justify-content:center;padding:0 4px;color:rgba(245,158,11,0.7);font-size:16px;}
+.step.feedback{border-color:rgba(245,158,11,0.5);background:rgba(28,18,4,0.5);}
+.step.feedback .snum{background:linear-gradient(145deg,#334155,#1e293b);color:var(--amber-l);}
+.step.feedback:hover{box-shadow:0 14px 40px rgba(245,158,11,0.35);}
+
+/* ============ FOOTER ============ */
+footer{
+  margin-top:60px;text-align:center;padding:38px 32px 30px;
+  background:linear-gradient(180deg,transparent, #060d1a);
+  border-top:1.5px solid #14243d;
+}
+footer .ftitle{color:#dbe8fb;font-size:17px;font-weight:800;letter-spacing:0.02em;}
+footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
+.legend{
+  display:inline-flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-top:22px;
+  background:#080f1e;border:1.5px solid #1a3050;border-radius:12px;padding:14px 26px;
+}
+.legend .li{color:#6a80a0;font-size:12.5px;}
+.legend .li b{font-weight:800;}
+.legend .li.blue b{color:var(--blue-ll);}
+.legend .li.teal b{color:var(--teal-l);}
+.legend-title{color:#243550;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0.16em;
+  border-right:1px solid #1a3050;padding-right:16px;}
+
+@media (max-width:1100px){
+  .key-to-po{gap:120px;}
+  .flow-steps{gap:14px;}
+  .step-arrow{display:none;}
+  .step{min-width:200px;}
+}
+@media (max-width:820px){
+  .bu-row,.champ-row,.champ-connect-row,.champ-down,.po-to-pod,.pod-row{grid-template-columns:repeat(2,1fr);}
+  .po-layer{grid-template-columns:1fr;}
+  .po-divider{display:none;}
+  .pod5-wrap{grid-column:auto;}
+  .key-to-po{gap:60px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER / HERO ============ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow"><i class="fa-solid fa-diagram-project"></i> Enterprise Digital Transformation — DT Team</div>
+    <h1>Future State Operating Model</h1>
+    <p class="subtitle">A unified view of business units, product owners, champions, and delivery pods</p>
+    <div class="badges">
+      <span class="pill blue"><span class="dot"></span> Business Operations Track</span>
+      <span class="pill teal"><span class="dot"></span> App Development Track</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ ORG MODEL ============ -->
+  <section class="section">
+    <div class="section-head"><span class="bar"></span><h2>Operating Model</h2></div>
+    <p class="section-sub">How work flows from the business through champions and product owners down to the delivery pods.</p>
+
+    <!-- LAYER 1: BUSINESS UNITS -->
+    <div class="layer-label"><span class="num">1</span><span>Business Units</span><span class="line"></span></div>
+    <div class="bu-row">
+      <!-- BU1 -->
+      <div class="card bu-card">
+        <div class="bu-tags"><span class="tag amber">Ops &amp; Process Requests</span><span class="tag blue">App Requests</span></div>
+        <div class="bu-icon"><i class="fa-solid fa-building"></i></div>
+        <div class="bu-title">Shared Services</div>
+        <div class="bu-desc">Legal · Corp Comms · HR<br>QEHS · Digital Technology</div>
+      </div>
+      <!-- BU2 -->
+      <div class="card bu-card">
+        <div class="bu-tags"><span class="tag amber">Ops &amp; Process Requests</span><span class="tag blue">App Requests</span></div>
+        <div class="bu-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="bu-title">Accounting &amp; Finance</div>
+        <div class="bu-desc">Accounting · Treasury<br>FP&amp;A · ERP</div>
+      </div>
+      <!-- BU3 -->
+      <div class="card bu-card">
+        <div class="bu-tags"><span class="tag amber">Ops &amp; Process Requests</span><span class="tag blue">App Requests</span></div>
+        <div class="bu-icon"><i class="fa-solid fa-industry"></i></div>
+        <div class="bu-title">Mfg &amp; Supply Chain</div>
+        <div class="bu-desc">Manufacturing · Procurement<br>Engineering · Supply Chain Ops</div>
+      </div>
+      <!-- BU4 -->
+      <div class="card bu-card">
+        <div class="bu-tags"><span class="tag amber">Ops &amp; Process Requests</span><span class="tag blue">App Requests</span></div>
+        <div class="bu-icon"><i class="fa-solid fa-gears"></i></div>
+        <div class="bu-title">Ops &amp; Services</div>
+        <div class="bu-desc">AMP Ops · Evolution Ops<br>BDEV</div>
+      </div>
+      <!-- BU5 TBD -->
+      <div class="card bu-card tbd">
+        <div class="bu-tags">&nbsp;</div>
+        <div class="bu-icon"><i class="fa-solid fa-circle-question"></i></div>
+        <div class="bu-title">New Business Unit</div>
+        <span class="tbd-pill">To Be Defined</span>
+      </div>
+    </div>
+
+    <!-- vertical connectors from BU1-4 to Champions -->
+    <div class="champ-connect-row" style="margin-top:0;">
+      <div class="vconnect"></div><div class="vconnect"></div><div class="vconnect"></div><div class="vconnect"></div><div></div>
+    </div>
+
+    <!-- LAYER 2: CHAMPIONS -->
+    <div class="layer-label"><span class="num" style="background:rgba(217,119,6,0.25);border-color:rgba(245,158,11,0.5);">2</span><span style="color:#9c7838;">BU Champions</span><span class="line" style="background:linear-gradient(90deg,rgba(245,158,11,0.35),transparent);"></span></div>
+    <div class="champ-row">
+      <div class="card champ-card">
+        <i class="fa-solid fa-crown crown"></i>
+        <div class="ctitle">BU Champion</div>
+        <div class="csub">Approves &amp; validates backlog items</div>
+      </div>
+      <div class="card champ-card">
+        <i class="fa-solid fa-crown crown"></i>
+        <div class="ctitle">BU Champion</div>
+        <div class="csub">Approves &amp; validates backlog items</div>
+      </div>
+      <div class="card champ-card">
+        <i class="fa-solid fa-crown crown"></i>
+        <div class="ctitle">BU Champion</div>
+        <div class="csub">Approves &amp; validates backlog items</div>
+      </div>
+      <div class="card champ-card">
+        <i class="fa-solid fa-crown crown"></i>
+        <div class="ctitle">BU Champion</div>
+        <div class="csub">Approves &amp; validates backlog items</div>
+      </div>
+      <div class="champ-empty"></div>
+    </div>
+
+    <!-- amber dashed bus connecting champions + arrows down -->
+    <div class="champ-bus-wrap">
+      <div class="champ-bus"></div>
+      <div class="champ-down">
+        <div class="arrow"></div><div class="arrow"></div><div class="arrow"></div><div class="arrow"></div><div></div>
+      </div>
+    </div>
+
+    <!-- KEY CALLOUT -->
+    <div class="key-callout">
+      <i class="fa-solid fa-bolt"></i>
+      <p><strong>KEY:</strong> Champions approve backlog items before the PO prioritizes — ensuring business alignment.</p>
+    </div>
+    <div class="key-to-po">
+      <div class="a"></div>
+      <div class="a"></div>
+    </div>
+
+    <!-- LAYER 3: PRODUCT OWNERS -->
+    <div class="layer-label"><span class="num">3</span><span>Product Owners</span><span class="line"></span></div>
+    <div class="po-layer">
+      <!-- Business PO -->
+      <div class="po-card">
+        <div class="po-head">
+          <div class="picon"><i class="fa-solid fa-user-tie"></i></div>
+          <div>
+            <div class="ptitle">Business PO</div>
+            <div class="psub">Product Owner — Business Units</div>
+          </div>
+        </div>
+        <div class="po-body">
+          <div class="po-bullet"><span class="b"><i class="fa-solid fa-chevron-right"></i></span><span>Consolidates &amp; prioritizes backlog for <strong>BUs 1–4</strong></span></div>
+          <div class="po-bullet"><span class="b"><i class="fa-solid fa-chevron-right"></i></span><span>Visits all 5 Business Units</span></div>
+          <div class="po-bullet"><span class="b"><i class="fa-solid fa-chevron-right"></i></span><span>Passes prioritized work to <strong>Pods 1–4</strong></span></div>
+        </div>
+      </div>
+
+      <div class="po-divider"></div>
+
+      <!-- App Dev PO -->
+      <div class="po-card">
+        <div class="po-head">
+          <div class="picon"><i class="fa-solid fa-code-branch"></i></div>
+          <div>
+            <div class="ptitle">App Dev PO</div>
+            <div class="psub">Product Owner — App Dev / CI</div>
+          </div>
+        </div>
+        <div class="po-body">
+          <div class="po-bullet"><span class="b"><i class="fa-solid fa-chevron-right"></i></span><span>Visits all 5 BUs + Internal DT Team</span></div>
+          <div class="po-bullet"><span class="b"><i class="fa-solid fa-chevron-right"></i></span><span>Prioritizes backlog across 5 apps</span></div>
+          <div class="chips">
+            <span class="chip">Galaxy</span><span class="chip">Evo Edge</span><span class="chip">Evo Automate</span><span class="chip">Amp Edge</span><span class="chip">Sigma</span>
+          </div>
+          <div class="po-bullet"><span class="b"><i class="fa-solid fa-chevron-right"></i></span><span>Passes prioritized work to <strong>Pod 5</strong></span></div>
+          <div class="dt-box">
+            <div class="dth"><i class="fa-solid fa-users-gear"></i><span>Internal DT Team</span></div>
+            <div class="dt-badges">
+              <span class="tbadge">Migration Projects</span>
+              <span class="tbadge">DT Roadmap Items</span>
+              <span class="tbadge">Tech Upgrades</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- connectors PO -> Pods -->
+    <div class="po-to-pod">
+      <div class="conn blue"></div><div class="conn blue"></div><div class="conn blue"></div><div class="conn blue"></div><div class="conn teal"></div>
+    </div>
+
+    <!-- LAYER 4: PODS -->
+    <div class="layer-label"><span class="num">4</span><span>Delivery Pods</span><span class="line"></span></div>
+    <div class="pod-row">
+      <!-- Pod 1 -->
+      <div class="pod-card">
+        <div class="pod-head"><div><div class="pn">Pod 1</div><div class="pd">Shared Services</div></div><span class="pod-badge">BA/SA</span></div>
+        <div class="pod-body">
+          <div class="person"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><div class="pname">Tyerenei Davenport</div><div class="prole">Business Analyst</div></div></div>
+          <div class="person"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><div class="pname">David Chester</div><div class="prole">Systems Analyst</div></div></div>
+        </div>
+      </div>
+      <!-- Pod 2 -->
+      <div class="pod-card">
+        <div class="pod-head"><div><div class="pn">Pod 2</div><div class="pd">Accounting &amp; Finance</div></div><span class="pod-badge">BA/SA</span></div>
+        <div class="pod-body">
+          <div class="person"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><div class="pname">Fahad Khan</div><div class="prole">Business Analyst</div></div></div>
+          <div class="person"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><div class="pname">Christina Gibson</div><div class="prole">Systems Analyst</div></div></div>
+        </div>
+      </div>
+      <!-- Pod 3 -->
+      <div class="pod-card">
+        <div class="pod-head"><div><div class="pn">Pod 3</div><div class="pd">Mfg &amp; Supply Chain</div></div><span class="pod-badge">BA/SA</span></div>
+        <div class="pod-body">
+          <div class="person"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><div class="pname">Frank Tallerine</div><div class="prole">Business Analyst</div></div></div>
+          <div class="sa-needed"><div class="avatar"><i class="fa-solid fa-user-plus"></i></div><div><div class="pname">SA Needed</div><div class="prole">Systems Analyst · Open</div></div></div>
+        </div>
+      </div>
+      <!-- Pod 4 -->
+      <div class="pod-card">
+        <div class="pod-head"><div><div class="pn">Pod 4</div><div class="pd">Ops &amp; Services</div></div><span class="pod-badge">BA/SA</span></div>
+        <div class="pod-body">
+          <div class="person"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><div class="pname">Sania Bhatti</div><div class="prole">Business Analyst</div></div></div>
+          <div class="person"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><div class="pname">Joshua Ly</div><div class="prole">Systems Analyst</div></div></div>
+        </div>
+      </div>
+      <!-- Pod 5 TEAL -->
+      <div class="pod-card teal">
+        <div class="pod-head"><div><div class="pn">Pod 5</div><div class="pd">App Dev / CI</div></div><span class="pod-badge">CI</span></div>
+        <div class="pod-body">
+          <div class="pod5-group" style="border-top:none;padding-top:0;">
+            <div class="glabel">Apps Supported</div>
+            <div class="pod5-chips">
+              <span class="pod5-chip">Galaxy</span><span class="pod5-chip">Evo Edge</span><span class="pod5-chip">Evo Automate</span><span class="pod5-chip">Amp Edge</span><span class="pod5-chip">Sigma</span>
+            </div>
+          </div>
+          <div class="pod5-group">
+            <div class="glabel">Handles</div>
+            <div class="pod5-handles">
+              <div class="h"><span class="d"></span>Feature Requests</div>
+              <div class="h"><span class="d"></span>Migrations</div>
+              <div class="h"><span class="d"></span>Digital Transformation Projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REQUEST FLOW ============ -->
+  <section class="flow-section">
+    <div class="section-head"><span class="bar"></span><h2>Request Flow</h2></div>
+    <p class="section-sub" style="color:#6ea89e;">The end-to-end journey of a request — from origination to delivery and feedback.</p>
+    <div class="flow-steps">
+      <div class="step"><div class="snum">1</div><h4>Requests Originate</h4><p>BUs submit ops/process + app requests; Champions validate.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step"><div class="snum">2</div><h4>Champion Approves</h4><p>BU Champions review and approve backlog items.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step"><div class="snum">3</div><h4>PO Intake</h4><p>Business PO or App Dev PO receives approved requests.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step"><div class="snum">4</div><h4>Prioritization</h4><p>POs sequence work across their respective backlogs.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step"><div class="snum">5</div><h4>Assign to Pod</h4><p>Work assigned to the right pod based on BU or app domain.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step"><div class="snum">6</div><h4>Deliver</h4><p>BA &amp; SA execute; output delivered back to BU or app.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-rotate-left"></i></div>
+      <div class="step feedback"><div class="snum"><i class="fa-solid fa-arrow-rotate-left"></i></div><h4>Feedback Loop</h4><p>Completed work triggers new requests; PO is notified.</p></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="ftitle">Enterprise Digital Transformation — DT Team</div>
+  <div class="fsub">Future State Operating Model</div>
+  <div class="legend">
+    <span class="legend-title">Legend</span>
+    <span class="li blue"><b>BA</b> = Business Analyst</span>
+    <span class="li blue"><b>SA</b> = Systems Analyst</span>
+    <span class="li blue"><b>PO</b> = Product Owner</span>
+    <span class="li teal"><b>CI</b> = Continuous Improvement</span>
+    <span class="li teal"><b>DT</b> = Digital Transformation</span>
+  </div>
+</footer>
+
+</body>
+</html>
