@@ -464,6 +464,33 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
 .scn-tag.re{background:rgba(245,158,11,0.2);color:#fbbf24;}
 .scn-tag.kept{background:rgba(45,212,191,0.18);color:#5eead4;}
 .scn-tag.road{background:rgba(139,92,246,0.22);color:#c4b5fd;}
+/* App Dev PO name tag */
+.pname-tag{font-size:11px;font-weight:700;color:#5eead4;margin-top:4px;display:flex;align-items:center;gap:5px;}
+.pname-tag i{font-size:10px;opacity:.85;}
+.pname-tag strong{color:#a7f3e4;font-weight:800;}
+/* Current vs Future — equal-height, scrollable panels */
+.cs-cols{align-items:stretch;}
+.cs-cols .scn-panel{display:flex;flex-direction:column;}
+.cs-intro{display:flex;gap:12px;align-items:center;background:rgba(8,15,30,0.5);border:1px solid #21375a;border-radius:12px;padding:12px 14px;margin-bottom:14px;}
+.cs-intro .av{width:42px;height:42px;min-width:42px;border-radius:50%;background:linear-gradient(135deg,#ef4444,#b91c1c);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;}
+.cs-cols .scn-panel.good .cs-intro .av{background:linear-gradient(135deg,#14b8a6,#0d9488);}
+.cs-intro .txt{font-size:12px;line-height:1.45;color:#8fa8c9;}
+.cs-intro .txt b{display:block;color:#e8f0fb;font-size:13px;font-weight:800;margin-bottom:1px;}
+/* compact jira tickets inside future panel */
+.mini-tickets{display:flex;flex-direction:column;gap:7px;margin-bottom:6px;}
+.mini-ticket{display:flex;align-items:center;gap:9px;background:rgba(8,15,30,0.6);border:1px solid #21375a;border-radius:9px;padding:7px 11px;}
+.mini-ticket .mk{font-size:10px;font-weight:800;color:#6a80a0;letter-spacing:.03em;min-width:52px;}
+.mini-ticket .mt{flex:1;color:#dbe8fb;font-size:12px;font-weight:600;}
+/* Josh's final sprint result box */
+.jsprint{background:linear-gradient(135deg,rgba(13,148,136,0.14),rgba(45,212,191,0.06));border:1.5px solid rgba(45,212,191,0.4);border-radius:14px;padding:15px 18px;margin-top:15px;}
+.jsprint .jsh{display:flex;align-items:center;gap:9px;color:#a7f3e4;font-size:13.5px;font-weight:800;margin-bottom:11px;}
+.jsprint .jsrow{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;padding:5px 0;border-bottom:1px solid rgba(45,212,191,0.14);}
+.jsprint .jsrow:last-of-type{border-bottom:none;}
+.jsprint .jsrow .l{color:#c0d2ea;font-weight:600;}
+.jsprint .jsrow .p{color:#5eead4;font-weight:800;}
+.jsprint .jstot{display:flex;justify-content:space-between;align-items:center;margin-top:9px;padding-top:11px;border-top:2px solid rgba(45,212,191,0.35);}
+.jsprint .jstot .l{color:#dbe8fb;font-size:13px;font-weight:800;}
+.jsprint .jstot .p{color:#2dd4bf;font-size:20px;font-weight:900;}
 /* ===== Jira Front Door ===== */
 .jira-lead{display:flex;gap:16px;align-items:center;background:rgba(14,35,64,0.6);border:1.5px solid rgba(37,99,235,0.3);border-radius:14px;padding:18px 22px;margin-bottom:24px;}
 .jira-lead .jl-ic{width:52px;height:52px;min-width:52px;border-radius:12px;background:linear-gradient(135deg,#2563eb,#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;}
@@ -593,7 +620,7 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
       <div class="card bu-card">
         <div class="bu-tags"><span class="tag amber">Ops &amp; Process Requests</span><span class="tag blue">App Requests</span></div>
         <div class="bu-icon"><i class="fa-solid fa-gears"></i></div>
-        <div class="bu-title">Ops &amp; Services</div>
+        <div class="bu-title">Frac Ops and Services</div>
         <div class="bu-desc">AMP Ops · Evolution Ops<br>BDEV</div>
       </div>
     </div>
@@ -674,6 +701,7 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
           <div>
             <div class="ptitle">App Dev PO</div>
             <div class="psub">Product Owner — App Dev / CI</div>
+            <div class="pname-tag"><i class="fa-solid fa-user"></i> Name: <strong>Jane Doe</strong></div>
           </div>
         </div>
         <div class="po-body">
@@ -751,7 +779,7 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
       </div>
       <!-- Pod 4 -->
       <div class="pod-card">
-        <div class="pod-head"><div><div class="pn">Pod 4</div><div class="pd">Ops &amp; Services</div></div><span class="pod-badge">BA/SA</span></div>
+        <div class="pod-head"><div><div class="pn">Pod 4</div><div class="pd">Frac Ops and Services</div></div><span class="pod-badge">BA/SA</span></div>
         <div class="pod-body">
           <div class="person"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><div class="pname">Sania Bhatti</div><div class="prole">Business Analyst</div></div></div>
           <div class="person"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><div class="pname">Joshua Ly</div><div class="prole">Systems Analyst</div></div></div>
@@ -781,61 +809,94 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
     </div>
   </section>
 
-  <!-- ============ JIRA FRONT DOOR ============ -->
+  <!-- ============ CURRENT STATE VS FUTURE STATE ============ -->
   <section class="section cap-section">
-    <div class="section-head"><span class="bar"></span><h2>The Front Door: Jira Intake &amp; Routing</h2></div>
-    <p class="section-sub">Every request — no matter who asks or which app — enters through <strong style="color:#93c5fd;">one Jira front door</strong>, gets tagged, and is routed to the right Product Owner.</p>
+    <div class="section-head"><span class="bar"></span><h2>Current State vs. Future State: A Sprint in Josh's World</h2></div>
+    <p class="section-sub">The same 5 requests. Two very different outcomes.</p>
 
-    <div class="jira-lead">
-      <div class="jl-ic"><i class="fa-solid fa-door-open"></i></div>
-      <p><b>No side-channel emails, hallway asks, or "quick favors."</b> A single Jira intake captures every request with the tags that drive routing — <b>App / Area</b>, <b>Type</b> (feature · migration · support · urgent), <b>Requestor</b>, and <b>Priority</b>. Those tags decide which PO's backlog the ticket lands in — and let the POs <strong style="color:#fbbf24;">reallocate</strong> work that came to the wrong door.</p>
-    </div>
+    <div class="scn-cols cs-cols">
 
-    <!-- Front door intake -->
-    <div class="jira-door">
-      <div class="jira-door-h"><i class="fa-solid fa-ticket" style="color:#60a5fa;"></i> Jira Intake — 5 requests arrive <span class="badge">1 front door</span></div>
-      <p class="sub">The same five items from Josh's example, as they'd be filed:</p>
-      <div class="jira-chips">
-        <div class="jira-chip"><span class="jc-key">DT-101</span><span class="jc-t">AMP — KPI safety dashboard</span><div class="jc-tags"><span class="scn-tag bu">Reporting</span><span class="scn-tag urg">Med</span></div></div>
-        <div class="jira-chip"><span class="jc-key">DT-102</span><span class="jc-t">Galaxy — validate features + stories</span><div class="jc-tags"><span class="scn-tag dt">DT-push</span></div></div>
-        <div class="jira-chip"><span class="jc-key">DT-103</span><span class="jc-t">Sigma — migrate all Power BI</span><div class="jc-tags"><span class="scn-tag dt">Migration</span><span class="scn-tag road">Program</span></div></div>
-        <div class="jira-chip"><span class="jc-key">DT-104</span><span class="jc-t">AMP Edge — validate DT features</span><div class="jc-tags"><span class="scn-tag dt">DT-push</span></div></div>
-        <div class="jira-chip"><span class="jc-key">DT-105</span><span class="jc-t">EVO — urgent request</span><div class="jc-tags"><span class="scn-tag urg">Urgent</span></div></div>
-      </div>
-    </div>
+      <!-- ===== CURRENT STATE (danger) ===== -->
+      <div class="scn-panel danger">
+        <div class="scn-ph"><span class="ci red"><i class="fa-solid fa-triangle-exclamation"></i></span>❌ Current State — No Model</div>
+        <p class="scn-sub">Josh is the BA for Frac Ops. Every request lands on him directly.</p>
 
-    <!-- funnel -->
-    <div class="jira-funnel">
-      <i class="fa-solid fa-angle-down"></i>
-      <span class="fl"><i class="fa-solid fa-shuffle"></i> Triaged by tag at sprint planning → routed to the right Product Owner</span>
-      <i class="fa-solid fa-angle-down"></i>
-    </div>
+        <div class="cs-intro">
+          <div class="av">J</div>
+          <div class="txt"><b>Josh — Frac Ops BA</b>No intake process, no triage, no structure. Five stakeholders, five inboxes, one person.</div>
+        </div>
 
-    <!-- routing lanes -->
-    <div class="scn-cols">
-      <!-- Business PO lane -->
-      <div class="scn-panel">
-        <div class="scn-ph"><span class="ci" style="background:rgba(37,99,235,0.16);color:#93c5fd;"><i class="fa-solid fa-user-tie"></i></span>Business PO → Pods 1–4</div>
-        <p class="scn-sub">Business-reporting &amp; BU pain-point work.</p>
-        <div class="scn-item"><div class="scn-num">101</div><div class="scn-it-txt"><b>AMP — KPI safety dashboard <span class="scn-tag re">Reallocated</span></b><span>Filed against "AMP," but it's a reporting need for a Business Unit — the business track owns reporting, so it's routed here. Never lands on Josh.</span></div></div>
-        <div class="scn-callout grn"><i class="fa-solid fa-arrow-right-arrow-left"></i><div><strong>Reallocation #1:</strong> wrong door → the Business PO picks it up, freeing App Dev capacity for true platform work.</div></div>
+        <div class="scn-item"><div class="scn-num">1</div><div class="scn-it-txt"><b>AMP — KPI Safety Dashboard <span class="scn-tag bu">Reporting</span></b><span>Business unit wants a new safety KPI dashboard.</span></div><div class="scn-pts hot">8 pts</div></div>
+        <div class="scn-item"><div class="scn-num">2</div><div class="scn-it-txt"><b>Galaxy — Validate Features + Write Stories <span class="scn-tag dt">DT-Push</span></b><span>DT-pushed app-dev validation and story writing.</span></div><div class="scn-pts hot">13 pts</div></div>
+        <div class="scn-item"><div class="scn-num">3</div><div class="scn-it-txt"><b>Sigma — Migrate ALL Power BI Reports <span class="scn-tag dt">Migration</span></b><span>Migrate the entire Power BI report estate to Sigma.</span></div><div class="scn-pts hot">21 pts</div></div>
+        <div class="scn-item"><div class="scn-num">4</div><div class="scn-it-txt"><b>AMP Edge — Validate DT Features <span class="scn-tag dt">DT-Push</span></b><span>DT-pushed feature validation on AMP Edge.</span></div><div class="scn-pts hot">8 pts</div></div>
+        <div class="scn-item"><div class="scn-num">5</div><div class="scn-it-txt"><b>EVO — Urgent Fix Needed <span class="scn-tag urg">Urgent</span></b><span>Production issue — stakeholder wants it "today."</span></div><div class="scn-pts hot">5 pts</div></div>
+
+        <div class="scn-total">
+          <span class="lbl">Total raw demand on Josh</span>
+          <span class="big hot">55 pts</span>
+        </div>
+
+        <div class="scn-callout red"><i class="fa-solid fa-fire"></i><div>With a <strong>15-point</strong> sprint capacity, Josh is at <strong>3.7× overload</strong>. No structure = no protection. He works nights and weekends, items get dropped, and stakeholders are unhappy.</div></div>
       </div>
 
-      <!-- App Dev PO lane -->
+      <!-- ===== FUTURE STATE (good) ===== -->
       <div class="scn-panel good">
-        <div class="scn-ph"><span class="ci grn"><i class="fa-solid fa-code-branch"></i></span>App Dev PO → Pod 5 (Josh)</div>
-        <p class="scn-sub">App features, migrations &amp; platform work across the 5 apps.</p>
-        <div class="scn-item"><div class="scn-num">102</div><div class="scn-it-txt"><b>Galaxy — validate + stories <span class="scn-tag kept">Stays · Josh</span></b><span>Genuine app-dev work — kept on Josh's Pod 5 backlog</span></div></div>
-        <div class="scn-item"><div class="scn-num">104</div><div class="scn-it-txt"><b>AMP Edge — validate features <span class="scn-tag kept">Stays · Josh</span></b><span>App-dev validation — kept with Josh</span></div></div>
-        <div class="scn-item"><div class="scn-num">103</div><div class="scn-it-txt"><b>Sigma migration <span class="scn-tag road">Split · Program</span></b><span>Recognized as a multi-quarter program: a discovery slice to Josh now, the bulk sequenced on the DT Roadmap across the year</span></div></div>
-        <div class="scn-item"><div class="scn-num">105</div><div class="scn-it-txt"><b>EVO — urgent <span class="scn-tag re">Load-balanced</span></b><span>Josh is at capacity → the PO reassigns it to a Pod 5 teammate with room, instead of stacking it on him</span></div></div>
-        <div class="scn-callout grn"><i class="fa-solid fa-arrow-right-arrow-left"></i><div><strong>Reallocations #2 &amp; #3:</strong> the Sigma program is sliced across the year, and the urgent EVO fire is load-balanced to a teammate — so no single person absorbs a spike.</div></div>
-      </div>
-    </div>
+        <div class="scn-ph"><span class="ci grn"><i class="fa-solid fa-circle-check"></i></span>✅ Future State — Requests Enter Jira</div>
+        <p class="scn-sub">Same 5 requests. Now they enter Jira, get tagged, and are triaged at Sprint Planning.</p>
 
-    <div class="cap-note" style="margin-top:24px;">
-      <i class="fa-solid fa-inbox"></i>
-      <p><strong>Where the work actually ends up:</strong> Of five requests aimed at one BA, only <strong>three</strong> stay with Josh — Galaxy, AMP Edge, and a Sigma discovery slice. The AMP dashboard moves to the Business PO, the urgent EVO is load-balanced to a teammate, and the Sigma migration bulk is roadmapped across the year. The front door turns <em style="color:#8fa8c9;">"everything on Josh"</em> into <em style="color:#93c5fd;">"the right work with the right owner"</em> — which is exactly what makes his 15-point sprint below achievable.</p>
+        <!-- Jira intake -->
+        <div class="cs-intro">
+          <div class="av"><i class="fa-solid fa-door-open"></i></div>
+          <div class="txt"><b>One Jira front door</b>Every request is filed as a ticket with routing tags — no side-channel asks.</div>
+        </div>
+        <div class="mini-tickets">
+          <div class="mini-ticket"><span class="mk">DT-101</span><span class="mt">AMP — KPI safety dashboard</span><span class="scn-tag bu">Reporting</span></div>
+          <div class="mini-ticket"><span class="mk">DT-102</span><span class="mt">Galaxy — validate + stories</span><span class="scn-tag dt">DT-Push</span></div>
+          <div class="mini-ticket"><span class="mk">DT-103</span><span class="mt">Sigma — migrate all Power BI</span><span class="scn-tag road">Program</span></div>
+          <div class="mini-ticket"><span class="mk">DT-104</span><span class="mt">AMP Edge — validate features</span><span class="scn-tag dt">DT-Push</span></div>
+          <div class="mini-ticket"><span class="mk">DT-105</span><span class="mt">EVO — urgent fix</span><span class="scn-tag urg">Urgent</span></div>
+        </div>
+
+        <!-- Triage timeline -->
+        <div class="wt">
+          <!-- Business PO lane -->
+          <div class="wt-step">
+            <div class="wt-dot"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="wt-card">
+              <div class="wt-h">Business PO Lane <span class="tag blue">Reporting &amp; BU pain points</span></div>
+              <div class="wt-rows">
+                <div class="wt-row"><span class="rk">DT-101</span><span class="rt">AMP KPI dashboard — a reporting need, not an app build. Business PO picks it up and routes to <b>Sania</b> (Pod 4 — Frac Ops BA) for business analysis.</span><span class="wt-mini re">Reallocated</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- App Dev PO lane -->
+          <div class="wt-step">
+            <div class="wt-dot teal"><i class="fa-solid fa-code-branch"></i></div>
+            <div class="wt-card teal">
+              <div class="wt-h">App Dev PO — Jane Doe <span class="tag teal">App-dev &amp; platform</span></div>
+              <div class="wt-rows">
+                <div class="wt-row"><span class="rk">DT-102</span><span class="rt">Galaxy validate + stories — genuine app-dev work. <b>Stays with Josh.</b></span><span class="wt-mini kept">Stays · Pod 5</span></div>
+                <div class="wt-row"><span class="rk">DT-104</span><span class="rt">AMP Edge validate features — app-dev validation. <b>Stays with Josh.</b></span><span class="wt-mini kept">Stays · Pod 5</span></div>
+                <div class="wt-row"><span class="rk">DT-103</span><span class="rt">Sigma migration — Jane Doe recognizes this as a multi-quarter program. A <b>discovery slice</b> goes to Josh now; the bulk is sequenced on the DT Roadmap.</span><span class="wt-mini road">Split · Program</span></div>
+                <div class="wt-row"><span class="rk">DT-105</span><span class="rt">EVO urgent — Josh is at capacity, so Jane Doe reassigns this to a <b>Pod 5 teammate</b> with room.</span><span class="wt-mini re">Load-Balanced</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Josh's final sprint -->
+        <div class="jsprint">
+          <div class="jsh"><i class="fa-solid fa-bullseye"></i>Josh's focused sprint</div>
+          <div class="jsrow"><span class="l">Galaxy — validate + stories (single sprint slice)</span><span class="p">8 pts</span></div>
+          <div class="jsrow"><span class="l">AMP Edge — validate features</span><span class="p">5 pts</span></div>
+          <div class="jsrow"><span class="l">Sigma — discovery slice</span><span class="p">5 pts</span></div>
+          <div class="jstot"><span class="l">Sustainable sprint total</span><span class="p">~18 pts ✅</span></div>
+        </div>
+
+        <div class="scn-callout grn"><i class="fa-solid fa-arrow-right-arrow-left"></i><div>From <strong>55 pts of chaos</strong> to a <strong>focused, sustainable sprint</strong>. The model didn't reduce the work — it distributed it to the right owners.</div></div>
+      </div>
     </div>
   </section>
 
@@ -941,7 +1002,7 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
     <!-- Meet Josh -->
     <div class="scn-lead">
       <div class="scn-avatar">JB</div>
-      <p><b>Meet Josh</b> — a <b>Business Analyst</b> on <b>Pod 4</b>, supporting the <b>Ops &amp; Services</b> business area. He works in two-week <b>sprints</b> and estimates work in <b>story points</b> (1 point ≈ 1 day of effort). Josh can realistically commit to <span class="cap-pill">15 story points per sprint</span>. One Monday, <b>five different requests</b> all surface that could point at him. Here's how the model turns what could be a 55-point pile-up into a calm, deliverable 15-point sprint — by following the process.</p>
+      <p><b>Meet Josh</b> — a <b>Business Analyst</b> on <b>Pod 4</b>, supporting the <b>Frac Ops and Services</b> business area. He works in two-week <b>sprints</b> and estimates work in <b>story points</b> (1 point ≈ 1 day of effort). Josh can realistically commit to <span class="cap-pill">15 story points per sprint</span>. One Monday, <b>five different requests</b> all surface that could point at him. Here's how the model turns what could be a 55-point pile-up into a calm, deliverable 15-point sprint — by following the process.</p>
     </div>
 
     <!-- Step-by-step walkthrough -->
@@ -954,11 +1015,11 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
           <div class="wt-h"><i class="fa-solid fa-circle-dot" style="color:#60a5fa;"></i> Requests Originate <span class="tag blue">Step 1</span></div>
           <p class="wt-desc">Five requests surface from two different streams. <b>Some are pulled by Business Units</b> (they need a feature or a fix). <b>Others are pushed by the internal DT team</b> (strategic platform work, migrations, or proactive tech initiatives):</p>
           <div class="wt-rows">
-            <div class="wt-row"><span class="rk">REQ-1</span><span class="wt-mini bu">BU-pull</span><span class="rt"><b>Ops &amp; Services BU</b> needs a new safety KPI dashboard built in AMP</span><span class="rp grey">~5 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-1</span><span class="wt-mini bu">BU-pull</span><span class="rt"><b>Frac Ops and Services BU</b> needs a new safety KPI dashboard built in AMP</span><span class="rp grey">~5 pts</span></div>
             <div class="wt-row"><span class="rk">REQ-2</span><span class="wt-mini dt">DT-push</span><span class="rt"><b>DT Team</b> pushed new Galaxy features — need business validation + user stories</span><span class="rp grey">~4 pts</span></div>
             <div class="wt-row"><span class="rk">REQ-3</span><span class="wt-mini dt">DT-push</span><span class="rt"><b>DT Team</b> surfaced a Sigma migration program: move <b>all</b> Power BI reports (end-of-year roadmap initiative)</span><span class="rp grey">~40 pts</span></div>
             <div class="wt-row"><span class="rk">REQ-4</span><span class="wt-mini dt">DT-push</span><span class="rt"><b>DT Team</b> pushed new AMP Edge features — need business validation</span><span class="rp grey">~4 pts</span></div>
-            <div class="wt-row"><span class="rk">REQ-5</span><span class="wt-mini urg">Urgent</span><span class="rt"><b>Ops &amp; Services BU</b> raised an urgent EVO app fix — "need it now"</span><span class="rp grey">~2 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-5</span><span class="wt-mini urg">Urgent</span><span class="rt"><b>Frac Ops and Services BU</b> raised an urgent EVO app fix — "need it now"</span><span class="rp grey">~2 pts</span></div>
           </div>
           <p class="wt-desc" style="margin-top:11px;color:#9db4d4;"><b>Raw total: ~55 points.</b> If all of it simply landed on Josh (who has 15-pt capacity), he'd burn out. The process prevents that from happening.</p>
         </div>
@@ -1020,7 +1081,7 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
         <div class="wt-dot teal">5</div>
         <div class="wt-card teal">
           <div class="wt-h"><i class="fa-solid fa-user-tag" style="color:#5eead4;"></i> Assign to Pod <span class="tag teal">Step 5</span></div>
-          <p class="wt-desc">Work is assigned to the right pod based on <b>Business Unit</b> or <b>app domain</b>. Josh is on <b>Pod 4 (Ops &amp; Services)</b>, so the sequenced 15-point sprint lands on his plate — a full but achievable load. Meanwhile:</p>
+          <p class="wt-desc">Work is assigned to the right pod based on <b>Business Unit</b> or <b>app domain</b>. Josh is on <b>Pod 4 (Frac Ops and Services)</b>, so the sequenced 15-point sprint lands on his plate — a full but achievable load. Meanwhile:</p>
           <div class="wt-rows">
             <div class="wt-row"><span class="wt-mini kept">Pod 4 · Josh</span><span class="rt">REQ-2, REQ-4, REQ-3 slice, ceremonies, innovation reserve</span><span class="rp ok">15 pts</span></div>
             <div class="wt-row"><span class="wt-mini re">Pod 5 teammate</span><span class="rt">REQ-5 (urgent EVO fix) — load-balanced to a teammate with room</span><span class="rp ok">~2 pts</span></div>
