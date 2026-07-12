@@ -423,6 +423,44 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
 .scn-mech .mh i{color:#2dd4bf;font-size:15px;}
 .scn-mech p{margin:0;color:#8fa8c9;font-size:12.5px;line-height:1.5;}
 .scn-mech p em{color:#93c5fd;font-style:normal;font-weight:700;}
+/* ===== Scenario walkthrough timeline ===== */
+.wt{position:relative;margin:26px 0 0;padding-left:46px;}
+.wt::before{content:"";position:absolute;left:17px;top:8px;bottom:34px;width:2px;background:linear-gradient(180deg,rgba(37,99,235,0.5),rgba(13,148,136,0.5));}
+.wt-step{position:relative;margin-bottom:22px;}
+.wt-step:last-child{margin-bottom:0;}
+.wt-dot{position:absolute;left:-46px;top:0;width:36px;height:36px;border-radius:50%;background:rgba(37,99,235,0.16);border:2px solid rgba(96,165,250,0.5);display:flex;align-items:center;justify-content:center;color:#93c5fd;font-weight:800;font-size:15px;z-index:2;}
+.wt-dot.teal{background:rgba(13,148,136,0.16);border-color:rgba(45,212,191,0.5);color:#5eead4;}
+.wt-card{background:rgba(14,35,64,0.72);border:1.5px solid rgba(37,99,235,0.35);border-radius:14px;padding:16px 20px;backdrop-filter:blur(6px);}
+.wt-card.teal{border-color:rgba(45,212,191,0.4);}
+.wt-card.amber{border-color:rgba(245,158,11,0.4);}
+.wt-card.red{border-color:rgba(239,68,68,0.4);}
+.wt-h{display:flex;align-items:center;gap:10px;font-size:15.5px;font-weight:800;color:#e8f0fb;margin-bottom:4px;}
+.wt-h .tag{margin-left:auto;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:2px 9px;border-radius:20px;}
+.wt-h .tag.blue{background:rgba(37,99,235,0.18);color:#93c5fd;}
+.wt-h .tag.teal{background:rgba(13,148,136,0.2);color:#5eead4;}
+.wt-h .tag.amber{background:rgba(245,158,11,0.18);color:#fbbf24;}
+.wt-desc{color:#9db4d4;font-size:13px;line-height:1.55;margin:0;}
+.wt-desc b{color:#dbe8fb;}
+.wt-desc em{color:#93c5fd;font-style:normal;font-weight:700;}
+.wt-rows{margin-top:11px;display:flex;flex-direction:column;gap:7px;}
+.wt-row{display:flex;align-items:center;gap:10px;background:rgba(8,15,30,0.55);border:1px solid #1c3252;border-radius:9px;padding:8px 12px;font-size:12.5px;}
+.wt-row .rk{font-size:10px;font-weight:800;color:#6a80a0;min-width:46px;}
+.wt-row .rt{color:#dbe8fb;font-weight:600;flex:1;}
+.wt-row .rp{font-weight:800;white-space:nowrap;}
+.wt-row .rp.hot{color:#f87171;}
+.wt-row .rp.ok{color:#5eead4;}
+.wt-row .rp.grey{color:#7f96b6;}
+.wt-mini{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;padding:1px 7px;border-radius:6px;white-space:nowrap;}
+.wt-mini.bu{background:rgba(37,99,235,0.18);color:#93c5fd;}
+.wt-mini.dt{background:rgba(13,148,136,0.2);color:#5eead4;}
+.wt-mini.urg{background:rgba(239,68,68,0.2);color:#f87171;}
+.wt-mini.re{background:rgba(245,158,11,0.2);color:#fbbf24;}
+.wt-mini.kept{background:rgba(45,212,191,0.18);color:#5eead4;}
+.wt-mini.road{background:rgba(139,92,246,0.22);color:#c4b5fd;}
+.wt-tot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:10px;border-top:1px dashed rgba(96,165,250,0.3);font-size:13px;font-weight:700;color:#c0d2ea;}
+.wt-tot .v{font-size:19px;font-weight:900;}
+.wt-tot .v.hot{color:#f87171;}
+.wt-tot .v.ok{color:#2dd4bf;}
 .scn-tag.re{background:rgba(245,158,11,0.2);color:#fbbf24;}
 .scn-tag.kept{background:rgba(45,212,191,0.18);color:#5eead4;}
 .scn-tag.road{background:rgba(139,92,246,0.22);color:#c4b5fd;}
@@ -898,46 +936,108 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
   <!-- ============ BURNOUT SCENARIO ============ -->
   <section class="section cap-section">
     <div class="section-head"><span class="bar"></span><h2>Scenario: A Sprint in Josh's Shoes</h2></div>
-    <p class="section-sub">Five urgent things hit one BA at once. Here's how the model protects him from drowning — without working nights &amp; weekends.</p>
+    <p class="section-sub">A worked, end-to-end example — follow five real requests through the model, from the moment they're raised to the moment they're delivered.</p>
 
+    <!-- Meet Josh -->
     <div class="scn-lead">
       <div class="scn-avatar">JB</div>
-      <p><b>Josh, a Business Analyst,</b> starts sprint planning with five things landing on his plate at the same time — a safety dashboard, feature validations, a "migrate everything" mega-initiative, and an urgent fire. His committed capacity for the sprint is just <span class="cap-pill">15 story points ≈ 15 days</span>. Left unmanaged, this is a burnout in the making.</p>
+      <p><b>Meet Josh</b> — a <b>Business Analyst</b> on a delivery pod. Working software gets built in two-week <b>sprints</b>, and a pod estimates work in <b>story points</b> (1 point ≈ 1 day of effort). Josh can realistically commit to <span class="cap-pill">15 story points ≈ 15 days</span> in a sprint. One Monday, <b>five different requests</b> all land pointing at him at once. Here's how the model turns that pile-up into a calm, deliverable sprint — instead of a burnout.</p>
     </div>
 
-    <div class="scn-cols">
-      <!-- The overload -->
-      <div class="scn-panel danger">
-        <div class="scn-ph"><span class="ci red"><i class="fa-solid fa-fire"></i></span>The Overload — no front door</div>
-        <p class="scn-sub">Without Jira routing, if all five were simply dumped on Josh, the raw demand looks like this:</p>
-        <div class="scn-item"><div class="scn-num">1</div><div class="scn-it-txt"><b>AMP — KPI safety dashboard <span class="scn-tag bu">BU-pull</span></b><span>Business Unit wants a new safety KPI dashboard built</span></div><div class="scn-pts hot">~5 pts</div></div>
-        <div class="scn-item"><div class="scn-num">2</div><div class="scn-it-txt"><b>Galaxy — validate DT features + write stories <span class="scn-tag dt">DT-push</span></b><span>DT is pushing features; needs validation &amp; user stories for refinement</span></div><div class="scn-pts hot">~3 pts</div></div>
-        <div class="scn-item"><div class="scn-num">3</div><div class="scn-it-txt"><b>Sigma — migrate ALL Power BI reports <span class="scn-tag dt">DT-push</span></b><span>Huge end-of-year initiative — the entire reporting estate</span></div><div class="scn-pts hot">~40+ pts</div></div>
-        <div class="scn-item"><div class="scn-num">4</div><div class="scn-it-txt"><b>AMP Edge — validate new DT features <span class="scn-tag dt">DT-push</span></b><span>DT pushing features that the business must validate</span></div><div class="scn-pts hot">~3 pts</div></div>
-        <div class="scn-item"><div class="scn-num">5</div><div class="scn-it-txt"><b>EVO — urgent request <span class="scn-tag urg">Urgent</span></b><span>An unplanned fire that "needs to happen now"</span></div><div class="scn-pts hot">~4 pts</div></div>
-        <div class="scn-total"><span class="lbl">Raw demand vs. 15-pt capacity</span><span class="big hot">~55 pts</span></div>
-        <div class="scn-callout red"><i class="fa-solid fa-triangle-exclamation"></i><div><strong>3.7× over capacity.</strong> Trying to absorb this is exactly how a BA burns out — context-switching all day, doing everything halfway, and making up the gap with nights &amp; weekends.</div></div>
+    <!-- Step-by-step walkthrough -->
+    <div class="wt">
+
+      <!-- 1: requests raised -->
+      <div class="wt-step">
+        <div class="wt-dot">1</div>
+        <div class="wt-card red">
+          <div class="wt-h">Five requests are raised <span class="tag amber">The pile-up</span></div>
+          <p class="wt-desc">They come from different directions: some are <em>pulled</em> by the business (a Business Unit needs something), some are <em>pushed</em> by the Digital Transformation (DT) team (strategic tech work), and one is an urgent fire. On paper, this is what everyone wants from Josh:</p>
+          <div class="wt-rows">
+            <div class="wt-row"><span class="rk">REQ-1</span><span class="wt-mini bu">Business</span><span class="rt">AMP app — build a new safety KPI dashboard</span><span class="rp hot">~5 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-2</span><span class="wt-mini dt">DT-push</span><span class="rt">Galaxy app — validate new features &amp; write user stories</span><span class="rp hot">~4 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-3</span><span class="wt-mini dt">DT-push</span><span class="rt">Sigma — migrate <b>all</b> Power BI reports (end-of-year program)</span><span class="rp hot">~40 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-4</span><span class="wt-mini dt">DT-push</span><span class="rt">AMP Edge app — validate new DT features with the business</span><span class="rp hot">~4 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-5</span><span class="wt-mini urg">Urgent</span><span class="rt">EVO app — an unplanned, "need-it-now" fix</span><span class="rp hot">~2 pts</span></div>
+          </div>
+          <div class="wt-tot"><span>Raw demand vs. Josh's 15-pt capacity</span><span class="v hot">~55 pts &nbsp;·&nbsp; 3.7×</span></div>
+          <p class="wt-desc" style="margin-top:11px;color:#fca5a5;"><i class="fa-solid fa-triangle-exclamation"></i> If Josh simply tried to absorb all of it, this is exactly how a BA burns out — context-switching all day, doing everything halfway, and making up the gap on nights &amp; weekends. The model never lets it get to that point. Here's why:</p>
+        </div>
       </div>
 
-      <!-- What actually lands -->
-      <div class="scn-panel good">
-        <div class="scn-ph"><span class="ci grn"><i class="fa-solid fa-shield-heart"></i></span>What the Model Lets Land</div>
-        <p class="scn-sub">After the Jira front door routes &amp; reallocates, only genuinely-his work reaches planning — capped to a realistic 15.</p>
-        <div class="scn-item"><div class="scn-num">2</div><div class="scn-it-txt"><b>Galaxy validation + stories <span class="scn-tag bu">Business Growth</span></b><span>App-dev work that stayed with Josh — validation &amp; refinement as real, bounded effort</span></div><div class="scn-pts ok">4 pts</div></div>
-        <div class="scn-item"><div class="scn-num">4</div><div class="scn-it-txt"><b>AMP Edge validation <span class="scn-tag bu">Business Growth</span></b><span>App-dev work that stayed with Josh — fits remaining Business Growth capacity</span></div><div class="scn-pts ok">4 pts</div></div>
-        <div class="scn-item"><div class="scn-num">3</div><div class="scn-it-txt"><b>Sigma migration — <em style="color:#5eead4;font-style:normal;">discovery slice only</em> <span class="scn-tag dt">Tech Enablement</span></b><span>Just this sprint's slice; the migration bulk is roadmapped across the year</span></div><div class="scn-pts ok">4 pts</div></div>
-        <div class="scn-item"><div class="scn-num"><i class="fa-solid fa-arrows-rotate" style="font-size:10px;"></i></div><div class="scn-it-txt"><b>Backlog refinement &amp; ceremonies <span class="scn-tag urg">Ops Support</span></b><span>Standups, planning, grooming — the real overhead of pod work</span></div><div class="scn-pts ok">1.5 pts</div></div>
-        <div class="scn-item"><div class="scn-num"><i class="fa-solid fa-lock" style="font-size:10px;"></i></div><div class="scn-it-txt"><b>Innovation / discovery reserve <span class="scn-tag bu" style="background:rgba(139,92,246,0.2);color:#c4b5fd;">Protected</span></b><span>Kept free so the pod isn't 100% reactive</span></div><div class="scn-pts ok">1.5 pts</div></div>
-        <div class="scn-total grn-top"><span class="lbl">Committed sprint total</span><span class="big ok">15 pts</span></div>
-        <div class="scn-callout grn"><i class="fa-solid fa-circle-check"></i><div><strong>A full but achievable sprint.</strong> The AMP dashboard went to the Business PO and the urgent EVO was load-balanced to a teammate at the front door — so they never reached Josh's plate. Everything else stays visible in the backlog, roadmapped for next planning.</div></div>
+      <!-- 2: front door -->
+      <div class="wt-step">
+        <div class="wt-dot">2</div>
+        <div class="wt-card">
+          <div class="wt-h"><i class="fa-solid fa-door-open" style="color:#60a5fa;"></i> Every request enters ONE front door <span class="tag blue">Jira intake</span></div>
+          <p class="wt-desc">No hallway asks, no side-channel emails, no "quick favors" straight to Josh. <b>All five are filed as Jira tickets</b>, each tagged with <em>App / Area</em>, <em>Type</em> (feature · migration · support · urgent), <em>Requestor</em>, and <em>Priority</em>. Those tags are what let the team route the work correctly in the next step — and they make the <b>full demand visible in one place</b> instead of hidden in five people's inboxes.</p>
+        </div>
       </div>
+
+      <!-- 3: route to POs -->
+      <div class="wt-step">
+        <div class="wt-dot">3</div>
+        <div class="wt-card">
+          <div class="wt-h"><i class="fa-solid fa-shuffle" style="color:#60a5fa;"></i> Product Owners triage &amp; route — not Josh <span class="tag blue">Who owns it</span></div>
+          <p class="wt-desc">Two <b>Product Owners (POs)</b> own the backlogs: a <b>Business PO</b> (business-reporting &amp; Business-Unit pain points) and an <b>App Dev PO</b> (app features, migrations &amp; platform work). Together with the Business Champions they sort every ticket to the right owner. Crucially, <em>Josh doesn't personally fight off five stakeholders</em> — leadership makes the call.</p>
+          <div class="wt-rows">
+            <div class="wt-row"><span class="rk">REQ-1</span><span class="rt">AMP safety dashboard — it's a <b>reporting</b> need for a Business Unit</span><span class="wt-mini re">→ Business PO</span></div>
+            <div class="wt-row"><span class="rk">REQ-2</span><span class="rt">Galaxy validation + stories — genuine app-dev work</span><span class="wt-mini kept">→ App Dev PO · Josh</span></div>
+            <div class="wt-row"><span class="rk">REQ-3</span><span class="rt">Sigma migration — a multi-quarter <b>program</b></span><span class="wt-mini road">→ App Dev PO · split</span></div>
+            <div class="wt-row"><span class="rk">REQ-4</span><span class="rt">AMP Edge validation — genuine app-dev work</span><span class="wt-mini kept">→ App Dev PO · Josh</span></div>
+            <div class="wt-row"><span class="rk">REQ-5</span><span class="rt">Urgent EVO fix — app-dev, but Josh is full</span><span class="wt-mini re">→ App Dev PO · teammate</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4: reallocate -->
+      <div class="wt-step">
+        <div class="wt-dot">4</div>
+        <div class="wt-card amber">
+          <div class="wt-h"><i class="fa-solid fa-arrow-right-arrow-left" style="color:#fbbf24;"></i> Reallocate what's on the wrong plate <span class="tag amber">3 moves</span></div>
+          <p class="wt-desc">This is the step that saves Josh. Three of the five requests are <em>moved off him</em> before the sprint even starts:</p>
+          <div class="wt-rows">
+            <div class="wt-row"><span class="wt-mini re">Move 1</span><span class="rt"><b>AMP dashboard →</b> handed to the <b>Business PO</b>'s pods (reporting isn't app-dev work). Never touches Josh.</span></div>
+            <div class="wt-row"><span class="wt-mini road">Move 2</span><span class="rt"><b>Sigma migration →</b> sliced into a year-long <b>roadmap</b>; only a small discovery slice comes to Josh now, the bulk is sequenced across future sprints.</span></div>
+            <div class="wt-row"><span class="wt-mini re">Move 3</span><span class="rt"><b>Urgent EVO →</b> load-balanced to a <b>Pod teammate</b> with room, instead of being stacked on top of Josh's full plate.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5: fit to capacity -->
+      <div class="wt-step">
+        <div class="wt-dot teal">5</div>
+        <div class="wt-card teal">
+          <div class="wt-h"><i class="fa-solid fa-layer-group" style="color:#5eead4;"></i> Fit the rest to Josh's 15-point capacity <span class="tag teal">The sprint</span></div>
+          <p class="wt-desc">Only the work that genuinely belongs to Josh reaches planning — and the pod's <b>capacity buckets</b> keep any single stream from taking over. He commits to a <b>full but achievable 15 points</b>:</p>
+          <div class="wt-rows">
+            <div class="wt-row"><span class="rk">REQ-2</span><span class="rt">Galaxy — validate features + write stories</span><span class="rp ok">4 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-4</span><span class="rt">AMP Edge — validate DT features with the business</span><span class="rp ok">4 pts</span></div>
+            <div class="wt-row"><span class="rk">REQ-3</span><span class="rt">Sigma — <b>discovery slice only</b> (rest on the roadmap)</span><span class="rp ok">4 pts</span></div>
+            <div class="wt-row"><span class="rk">—</span><span class="rt">Ceremonies &amp; backlog refinement (standups, planning, grooming)</span><span class="rp ok">1.5 pts</span></div>
+            <div class="wt-row"><span class="rk">—</span><span class="rt"><i class="fa-solid fa-lock" style="font-size:10px;"></i> Innovation / discovery reserve (kept free on purpose)</span><span class="rp ok">1.5 pts</span></div>
+          </div>
+          <div class="wt-tot" style="border-top-color:rgba(45,212,191,0.35);"><span>Committed sprint total</span><span class="v ok">15 pts &nbsp;✓</span></div>
+        </div>
+      </div>
+
+      <!-- 6: deliver -->
+      <div class="wt-step">
+        <div class="wt-dot teal">6</div>
+        <div class="wt-card teal">
+          <div class="wt-h"><i class="fa-solid fa-circle-check" style="color:#5eead4;"></i> Deliver, then feed back <span class="tag teal">Outcome</span></div>
+          <p class="wt-desc">Josh and his Systems Analyst partner deliver the committed 15 points at a sustainable pace. The reallocated items are being handled elsewhere — <b>nothing was dropped</b>: the AMP dashboard ships from a business pod, the EVO fix from a teammate, and the Sigma program marches on via the roadmap. Completed work flows back to the requestors and surfaces the next round of requests — and the whole cycle repeats, in control.</p>
+        </div>
+      </div>
+
     </div>
 
     <!-- Why it saves him -->
+    <div class="section-head" style="margin-top:34px;"><span class="bar"></span><h2 style="font-size:19px;">Why Josh doesn't burn out</h2></div>
     <ul class="scn-mechs">
       <li class="scn-mech"><div class="mh"><i class="fa-solid fa-ruler-combined"></i>Hard capacity ceiling</div><p>15 points is a <em>wall</em>, not a target. Demand of 55 can't be crammed into it — the overflow becomes <em>visible</em> instead of quietly absorbed by Josh's evenings.</p></li>
       <li class="scn-mech"><div class="mh"><i class="fa-solid fa-users-gear"></i>POs &amp; Champions triage — not Josh</div><p>The "not this sprint" decisions are made <em>with leadership</em> at planning. Josh never has to personally fight off five stakeholders — the political &amp; emotional load leaves his shoulders.</p></li>
-      <li class="scn-mech"><div class="mh"><i class="fa-solid fa-layer-group"></i>Buckets cap any one stream</div><p>The "huge" Sigma migration can only claim its <em>Tech-Enablement slice</em> (~3 pts) per sprint. Sliced across the year, a mega-initiative can never swallow Josh whole in one go.</p></li>
+      <li class="scn-mech"><div class="mh"><i class="fa-solid fa-layer-group"></i>Buckets cap any one stream</div><p>The "huge" Sigma migration can only claim a small <em>discovery slice</em> per sprint. Sliced across the year, a mega-initiative can never swallow Josh whole in one go.</p></li>
       <li class="scn-mech"><div class="mh"><i class="fa-solid fa-right-left"></i>Urgent = route &amp; load-balance</div><p>The urgent EVO fire is <em>routed to a teammate with room</em> — or swaps out equal-size work — never piled onto an already-full plate. Sustainable pace is defended by design.</p></li>
     </ul>
   </section>
