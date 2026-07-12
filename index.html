@@ -423,6 +423,27 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
 .scn-mech .mh i{color:#2dd4bf;font-size:15px;}
 .scn-mech p{margin:0;color:#8fa8c9;font-size:12.5px;line-height:1.5;}
 .scn-mech p em{color:#93c5fd;font-style:normal;font-weight:700;}
+.scn-tag.re{background:rgba(245,158,11,0.2);color:#fbbf24;}
+.scn-tag.kept{background:rgba(45,212,191,0.18);color:#5eead4;}
+.scn-tag.road{background:rgba(139,92,246,0.22);color:#c4b5fd;}
+/* ===== Jira Front Door ===== */
+.jira-lead{display:flex;gap:16px;align-items:center;background:rgba(14,35,64,0.6);border:1.5px solid rgba(37,99,235,0.3);border-radius:14px;padding:18px 22px;margin-bottom:24px;}
+.jira-lead .jl-ic{width:52px;height:52px;min-width:52px;border-radius:12px;background:linear-gradient(135deg,#2563eb,#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;}
+.jira-lead p{margin:0;color:#a8c0dd;font-size:14.5px;line-height:1.55;}
+.jira-lead b{color:#dbe8fb;}
+.jira-door{background:linear-gradient(135deg,rgba(37,99,235,0.12),rgba(13,148,136,0.08));border:1.5px solid rgba(37,99,235,0.4);border-radius:16px;padding:18px 20px 20px;}
+.jira-door-h{display:flex;align-items:center;gap:10px;color:#dbe8fb;font-size:14px;font-weight:800;margin-bottom:4px;}
+.jira-door-h .badge{margin-left:auto;font-size:11px;font-weight:700;color:#93c5fd;background:rgba(37,99,235,0.16);border:1px solid rgba(96,165,250,0.35);padding:3px 10px;border-radius:20px;}
+.jira-door .sub{color:#7f96b6;font-size:12.5px;margin:0 0 14px;}
+.jira-chips{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+@media(max-width:900px){.jira-chips{grid-template-columns:1fr 1fr;}}
+.jira-chip{background:rgba(8,15,30,0.65);border:1px solid #21375a;border-radius:10px;padding:10px 11px;display:flex;flex-direction:column;gap:6px;}
+.jira-chip .jc-key{font-size:10px;color:#6a80a0;font-weight:800;letter-spacing:.03em;}
+.jira-chip .jc-t{color:#e8f0fb;font-size:12px;font-weight:700;line-height:1.3;}
+.jira-chip .jc-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto;}
+.jira-funnel{display:flex;flex-direction:column;align-items:center;margin:16px 0 22px;gap:7px;}
+.jira-funnel i{color:#4b6a92;font-size:17px;}
+.jira-funnel .fl{display:flex;align-items:center;gap:9px;background:rgba(13,148,136,0.1);border:1px solid rgba(45,212,191,0.3);padding:7px 16px;border-radius:20px;color:#99f6e4;font-size:12.5px;font-weight:700;}
 .cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
 .cap-card{
   background:rgba(14,35,64,0.72);border:1.5px solid rgba(37,99,235,0.4);border-radius:16px;
@@ -816,6 +837,64 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
     </div>
   </section>
 
+  <!-- ============ JIRA FRONT DOOR ============ -->
+  <section class="section cap-section">
+    <div class="section-head"><span class="bar"></span><h2>The Front Door: Jira Intake &amp; Routing</h2></div>
+    <p class="section-sub">Every request — no matter who asks or which app — enters through <strong style="color:#93c5fd;">one Jira front door</strong>, gets tagged, and is routed to the right Product Owner.</p>
+
+    <div class="jira-lead">
+      <div class="jl-ic"><i class="fa-solid fa-door-open"></i></div>
+      <p><b>No side-channel emails, hallway asks, or "quick favors."</b> A single Jira intake captures every request with the tags that drive routing — <b>App / Area</b>, <b>Type</b> (feature · migration · support · urgent), <b>Requestor</b>, and <b>Priority</b>. Those tags decide which PO's backlog the ticket lands in — and let the POs <strong style="color:#fbbf24;">reallocate</strong> work that came to the wrong door.</p>
+    </div>
+
+    <!-- Front door intake -->
+    <div class="jira-door">
+      <div class="jira-door-h"><i class="fa-solid fa-ticket" style="color:#60a5fa;"></i> Jira Intake — 5 requests arrive <span class="badge">1 front door</span></div>
+      <p class="sub">The same five items from Josh's example, as they'd be filed:</p>
+      <div class="jira-chips">
+        <div class="jira-chip"><span class="jc-key">DT-101</span><span class="jc-t">AMP — KPI safety dashboard</span><div class="jc-tags"><span class="scn-tag bu">Reporting</span><span class="scn-tag urg">Med</span></div></div>
+        <div class="jira-chip"><span class="jc-key">DT-102</span><span class="jc-t">Galaxy — validate features + stories</span><div class="jc-tags"><span class="scn-tag dt">DT-push</span></div></div>
+        <div class="jira-chip"><span class="jc-key">DT-103</span><span class="jc-t">Sigma — migrate all Power BI</span><div class="jc-tags"><span class="scn-tag dt">Migration</span><span class="scn-tag road">Program</span></div></div>
+        <div class="jira-chip"><span class="jc-key">DT-104</span><span class="jc-t">AMP Edge — validate DT features</span><div class="jc-tags"><span class="scn-tag dt">DT-push</span></div></div>
+        <div class="jira-chip"><span class="jc-key">DT-105</span><span class="jc-t">EVO — urgent request</span><div class="jc-tags"><span class="scn-tag urg">Urgent</span></div></div>
+      </div>
+    </div>
+
+    <!-- funnel -->
+    <div class="jira-funnel">
+      <i class="fa-solid fa-angle-down"></i>
+      <span class="fl"><i class="fa-solid fa-shuffle"></i> Triaged by tag at sprint planning → routed to the right Product Owner</span>
+      <i class="fa-solid fa-angle-down"></i>
+    </div>
+
+    <!-- routing lanes -->
+    <div class="scn-cols">
+      <!-- Business PO lane -->
+      <div class="scn-panel">
+        <div class="scn-ph"><span class="ci" style="background:rgba(37,99,235,0.16);color:#93c5fd;"><i class="fa-solid fa-user-tie"></i></span>Business PO → Pods 1–4</div>
+        <p class="scn-sub">Business-reporting &amp; BU pain-point work.</p>
+        <div class="scn-item"><div class="scn-num">101</div><div class="scn-it-txt"><b>AMP — KPI safety dashboard <span class="scn-tag re">Reallocated</span></b><span>Filed against "AMP," but it's a reporting need for a Business Unit — the business track owns reporting, so it's routed here. Never lands on Josh.</span></div></div>
+        <div class="scn-callout grn"><i class="fa-solid fa-arrow-right-arrow-left"></i><div><strong>Reallocation #1:</strong> wrong door → the Business PO picks it up, freeing App Dev capacity for true platform work.</div></div>
+      </div>
+
+      <!-- App Dev PO lane -->
+      <div class="scn-panel good">
+        <div class="scn-ph"><span class="ci grn"><i class="fa-solid fa-code-branch"></i></span>App Dev PO → Pod 5 (Josh)</div>
+        <p class="scn-sub">App features, migrations &amp; platform work across the 5 apps.</p>
+        <div class="scn-item"><div class="scn-num">102</div><div class="scn-it-txt"><b>Galaxy — validate + stories <span class="scn-tag kept">Stays · Josh</span></b><span>Genuine app-dev work — kept on Josh's Pod 5 backlog</span></div></div>
+        <div class="scn-item"><div class="scn-num">104</div><div class="scn-it-txt"><b>AMP Edge — validate features <span class="scn-tag kept">Stays · Josh</span></b><span>App-dev validation — kept with Josh</span></div></div>
+        <div class="scn-item"><div class="scn-num">103</div><div class="scn-it-txt"><b>Sigma migration <span class="scn-tag road">Split · Program</span></b><span>Recognized as a multi-quarter program: a discovery slice to Josh now, the bulk sequenced on the DT Roadmap across the year</span></div></div>
+        <div class="scn-item"><div class="scn-num">105</div><div class="scn-it-txt"><b>EVO — urgent <span class="scn-tag re">Load-balanced</span></b><span>Josh is at capacity → the PO reassigns it to a Pod 5 teammate with room, instead of stacking it on him</span></div></div>
+        <div class="scn-callout grn"><i class="fa-solid fa-arrow-right-arrow-left"></i><div><strong>Reallocations #2 &amp; #3:</strong> the Sigma program is sliced across the year, and the urgent EVO fire is load-balanced to a teammate — so no single person absorbs a spike.</div></div>
+      </div>
+    </div>
+
+    <div class="cap-note" style="margin-top:24px;">
+      <i class="fa-solid fa-inbox"></i>
+      <p><strong>Where the work actually ends up:</strong> Of five requests aimed at one BA, only <strong>three</strong> stay with Josh — Galaxy, AMP Edge, and a Sigma discovery slice. The AMP dashboard moves to the Business PO, the urgent EVO is load-balanced to a teammate, and the Sigma migration bulk is roadmapped across the year. The front door turns <em style="color:#8fa8c9;">"everything on Josh"</em> into <em style="color:#93c5fd;">"the right work with the right owner"</em> — which is exactly what makes his 15-point sprint below achievable.</p>
+    </div>
+  </section>
+
   <!-- ============ BURNOUT SCENARIO ============ -->
   <section class="section cap-section">
     <div class="section-head"><span class="bar"></span><h2>Scenario: A Sprint in Josh's Shoes</h2></div>
@@ -829,8 +908,8 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
     <div class="scn-cols">
       <!-- The overload -->
       <div class="scn-panel danger">
-        <div class="scn-ph"><span class="ci red"><i class="fa-solid fa-fire"></i></span>The Overload — everything, all at once</div>
-        <p class="scn-sub">If Josh simply tried to do it all, the raw demand looks like this:</p>
+        <div class="scn-ph"><span class="ci red"><i class="fa-solid fa-fire"></i></span>The Overload — no front door</div>
+        <p class="scn-sub">Without Jira routing, if all five were simply dumped on Josh, the raw demand looks like this:</p>
         <div class="scn-item"><div class="scn-num">1</div><div class="scn-it-txt"><b>AMP — KPI safety dashboard <span class="scn-tag bu">BU-pull</span></b><span>Business Unit wants a new safety KPI dashboard built</span></div><div class="scn-pts hot">~5 pts</div></div>
         <div class="scn-item"><div class="scn-num">2</div><div class="scn-it-txt"><b>Galaxy — validate DT features + write stories <span class="scn-tag dt">DT-push</span></b><span>DT is pushing features; needs validation &amp; user stories for refinement</span></div><div class="scn-pts hot">~3 pts</div></div>
         <div class="scn-item"><div class="scn-num">3</div><div class="scn-it-txt"><b>Sigma — migrate ALL Power BI reports <span class="scn-tag dt">DT-push</span></b><span>Huge end-of-year initiative — the entire reporting estate</span></div><div class="scn-pts hot">~40+ pts</div></div>
@@ -843,15 +922,14 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
       <!-- What actually lands -->
       <div class="scn-panel good">
         <div class="scn-ph"><span class="ci grn"><i class="fa-solid fa-shield-heart"></i></span>What the Model Lets Land</div>
-        <p class="scn-sub">POs &amp; Champions slice demand at planning to fit the buckets — Josh commits to a realistic 15.</p>
-        <div class="scn-item"><div class="scn-num">1</div><div class="scn-it-txt"><b>AMP safety dashboard <span class="scn-tag bu">Business Growth</span></b><span>The high-value BU ask — takes the biggest slice</span></div><div class="scn-pts ok">5 pts</div></div>
-        <div class="scn-item"><div class="scn-num">2</div><div class="scn-it-txt"><b>Galaxy validation + stories <span class="scn-tag bu">Business Growth</span></b><span>Validation &amp; refinement counted as real, bounded work</span></div><div class="scn-pts ok">2 pts</div></div>
-        <div class="scn-item"><div class="scn-num">4</div><div class="scn-it-txt"><b>AMP Edge validation <span class="scn-tag bu">Business Growth</span></b><span>Fits the remaining Business Growth capacity</span></div><div class="scn-pts ok">2 pts</div></div>
-        <div class="scn-item"><div class="scn-num">3</div><div class="scn-it-txt"><b>Sigma migration — <em style="color:#5eead4;font-style:normal;">discovery slice only</em> <span class="scn-tag dt">Tech Enablement</span></b><span>Just this sprint's slice; full migration roadmapped across the year</span></div><div class="scn-pts ok">3 pts</div></div>
-        <div class="scn-item"><div class="scn-num">5</div><div class="scn-it-txt"><b>Urgent EVO — <em style="color:#f87171;font-style:normal;">swapped in</em> <span class="scn-tag urg">Ops Support</span></b><span>PO trades out a lower-priority item to make room — nothing stacked on top</span></div><div class="scn-pts ok">1.5 pts</div></div>
+        <p class="scn-sub">After the Jira front door routes &amp; reallocates, only genuinely-his work reaches planning — capped to a realistic 15.</p>
+        <div class="scn-item"><div class="scn-num">2</div><div class="scn-it-txt"><b>Galaxy validation + stories <span class="scn-tag bu">Business Growth</span></b><span>App-dev work that stayed with Josh — validation &amp; refinement as real, bounded effort</span></div><div class="scn-pts ok">4 pts</div></div>
+        <div class="scn-item"><div class="scn-num">4</div><div class="scn-it-txt"><b>AMP Edge validation <span class="scn-tag bu">Business Growth</span></b><span>App-dev work that stayed with Josh — fits remaining Business Growth capacity</span></div><div class="scn-pts ok">4 pts</div></div>
+        <div class="scn-item"><div class="scn-num">3</div><div class="scn-it-txt"><b>Sigma migration — <em style="color:#5eead4;font-style:normal;">discovery slice only</em> <span class="scn-tag dt">Tech Enablement</span></b><span>Just this sprint's slice; the migration bulk is roadmapped across the year</span></div><div class="scn-pts ok">4 pts</div></div>
+        <div class="scn-item"><div class="scn-num"><i class="fa-solid fa-arrows-rotate" style="font-size:10px;"></i></div><div class="scn-it-txt"><b>Backlog refinement &amp; ceremonies <span class="scn-tag urg">Ops Support</span></b><span>Standups, planning, grooming — the real overhead of pod work</span></div><div class="scn-pts ok">1.5 pts</div></div>
         <div class="scn-item"><div class="scn-num"><i class="fa-solid fa-lock" style="font-size:10px;"></i></div><div class="scn-it-txt"><b>Innovation / discovery reserve <span class="scn-tag bu" style="background:rgba(139,92,246,0.2);color:#c4b5fd;">Protected</span></b><span>Kept free so the pod isn't 100% reactive</span></div><div class="scn-pts ok">1.5 pts</div></div>
         <div class="scn-total grn-top"><span class="lbl">Committed sprint total</span><span class="big ok">15 pts</span></div>
-        <div class="scn-callout grn"><i class="fa-solid fa-circle-check"></i><div><strong>A full but achievable sprint.</strong> Everything that didn't fit stays visible in the backlog — roadmapped and re-prioritized next planning, not dropped and not crammed.</div></div>
+        <div class="scn-callout grn"><i class="fa-solid fa-circle-check"></i><div><strong>A full but achievable sprint.</strong> The AMP dashboard went to the Business PO and the urgent EVO was load-balanced to a teammate at the front door — so they never reached Josh's plate. Everything else stays visible in the backlog, roadmapped for next planning.</div></div>
       </div>
     </div>
 
@@ -860,7 +938,7 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
       <li class="scn-mech"><div class="mh"><i class="fa-solid fa-ruler-combined"></i>Hard capacity ceiling</div><p>15 points is a <em>wall</em>, not a target. Demand of 55 can't be crammed into it — the overflow becomes <em>visible</em> instead of quietly absorbed by Josh's evenings.</p></li>
       <li class="scn-mech"><div class="mh"><i class="fa-solid fa-users-gear"></i>POs &amp; Champions triage — not Josh</div><p>The "not this sprint" decisions are made <em>with leadership</em> at planning. Josh never has to personally fight off five stakeholders — the political &amp; emotional load leaves his shoulders.</p></li>
       <li class="scn-mech"><div class="mh"><i class="fa-solid fa-layer-group"></i>Buckets cap any one stream</div><p>The "huge" Sigma migration can only claim its <em>Tech-Enablement slice</em> (~3 pts) per sprint. Sliced across the year, a mega-initiative can never swallow Josh whole in one go.</p></li>
-      <li class="scn-mech"><div class="mh"><i class="fa-solid fa-right-left"></i>Urgent = trade, not stack</div><p>The urgent EVO fire <em>swaps out</em> work of equal size — it doesn't get piled onto an already-full plate. Sustainable pace is defended by design.</p></li>
+      <li class="scn-mech"><div class="mh"><i class="fa-solid fa-right-left"></i>Urgent = route &amp; load-balance</div><p>The urgent EVO fire is <em>routed to a teammate with room</em> — or swaps out equal-size work — never piled onto an already-full plate. Sustainable pace is defended by design.</p></li>
     </ul>
   </section>
 
