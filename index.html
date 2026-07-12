@@ -358,6 +358,59 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
 .stream-tag.bu{background:rgba(37,99,235,0.15);color:var(--blue-ll);border:1px solid rgba(96,165,250,0.3);}
 .stream-tag.dt{background:rgba(13,148,136,0.15);color:var(--teal-ll);border:1px solid rgba(45,212,191,0.3);}
 
+/* ============ CAPACITY ALLOCATION ============ */
+.cap-section{margin-top:64px;}
+.cap-intro{
+  display:flex;align-items:flex-start;gap:12px;max-width:900px;margin:0 0 30px 18px;
+  color:#8fa8c9;font-size:14px;line-height:1.55;
+}
+.cap-intro i{color:var(--blue-l);font-size:16px;margin-top:2px;flex-shrink:0;}
+.cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.cap-card{
+  background:rgba(14,35,64,0.72);border:1.5px solid rgba(37,99,235,0.4);border-radius:16px;
+  padding:22px 24px 24px;backdrop-filter:blur(6px);box-shadow:0 8px 28px rgba(37,99,235,0.14);
+}
+.cap-card.teal-card{border-color:rgba(13,148,136,0.45);box-shadow:0 8px 28px rgba(13,148,136,0.16);}
+.cap-head{display:flex;align-items:center;gap:13px;margin-bottom:6px;}
+.cap-head .cicon{width:40px;height:40px;min-width:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:rgba(59,130,246,0.2);border:1.5px solid rgba(59,130,246,0.45);}
+.cap-head .cicon i{color:var(--blue-l);font-size:18px;}
+.teal-card .cap-head .cicon{background:rgba(13,148,136,0.2);border-color:rgba(45,212,191,0.45);}
+.teal-card .cap-head .cicon i{color:var(--teal-l);}
+.cap-head .ctitle2{color:#fff;font-size:18px;font-weight:800;}
+.cap-head .csub2{color:#7ba0cf;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-top:2px;}
+.teal-card .cap-head .csub2{color:#4db8a8;}
+.cap-tension{color:#8298b8;font-size:12px;font-style:italic;margin:0 0 18px 53px;line-height:1.4;}
+/* stacked bar */
+.cap-bar{display:flex;height:34px;border-radius:9px;overflow:hidden;margin-bottom:20px;border:1px solid rgba(255,255,255,0.06);}
+.cap-seg{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;
+  transition:flex .3s ease;position:relative;}
+.cap-seg span{text-shadow:0 1px 3px rgba(0,0,0,0.5);}
+.seg-blue{background:linear-gradient(180deg,#3b82f6,#2563eb);}
+.seg-teal{background:linear-gradient(180deg,#14b8a6,#0d9488);}
+.seg-amber{background:linear-gradient(180deg,#f59e0b,#d97706);}
+.seg-purple{background:linear-gradient(180deg,#a855f7,#7c3aed);}
+/* legend rows */
+.cap-rows{display:flex;flex-direction:column;gap:11px;}
+.cap-row{display:flex;align-items:flex-start;gap:12px;}
+.cap-row .swatch{width:14px;height:14px;min-width:14px;border-radius:4px;margin-top:2px;}
+.sw-blue{background:#2563eb;}.sw-teal{background:#0d9488;}.sw-amber{background:#d97706;}.sw-purple{background:#7c3aed;}
+.cap-row .rpct{font-size:15px;font-weight:900;color:#fff;min-width:42px;}
+.cap-row .rtext{font-size:13px;line-height:1.4;}
+.cap-row .rtext b{color:#dbe8fb;font-weight:800;display:block;font-size:13.5px;margin-bottom:1px;}
+.cap-row .rtext span{color:#7d94b8;}
+.cap-note{
+  display:flex;align-items:flex-start;gap:11px;margin-top:56px;
+  background:linear-gradient(90deg,rgba(139,92,246,0.1),rgba(139,92,246,0.03));
+  border:1.5px solid rgba(139,92,246,0.3);border-radius:12px;padding:16px 20px;max-width:1000px;
+}
+.cap-note i{color:#c084fc;font-size:17px;margin-top:1px;flex-shrink:0;}
+.cap-note p{color:#c4a8e0;font-size:13.5px;line-height:1.5;}
+.cap-note strong{color:#d8b4fe;font-weight:800;}
+
+@media (max-width:900px){
+  .cap-grid{grid-template-columns:1fr;}
+}
 @media (max-width:1100px){
   .key-to-po{gap:120px;}
   .flow-steps{gap:14px;}
@@ -629,6 +682,71 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
       <div class="step"><div class="snum">6</div><h4>Deliver</h4><p>BA &amp; SA execute; output delivered back to BU or app.</p></div>
       <div class="step-arrow"><i class="fa-solid fa-arrow-rotate-left"></i></div>
       <div class="step feedback"><div class="snum"><i class="fa-solid fa-arrow-rotate-left"></i></div><h4>Feedback Loop</h4><p>Completed work triggers new requests; PO is notified.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ CAPACITY ALLOCATION ============ -->
+  <section class="section cap-section">
+    <div class="section-head"><span class="bar"></span><h2>Capacity Allocation Strategy</h2></div>
+    <p class="section-sub">How each PO divides pod capacity into fixed "buckets" so no single type of work dominates.</p>
+    <div class="cap-intro">
+      <i class="fa-solid fa-lightbulb"></i>
+      <div>POs don't just rank requests 1–100. They reserve a <strong style="color:#93c5fd;">percentage of capacity</strong> for each category of work — guaranteeing technical health and innovation aren't crowded out by business demand, while ensuring the transformation isn't hijacked by tech projects. Percentages are a starting point, tuned each planning cycle.</div>
+    </div>
+
+    <div class="cap-grid">
+      <!-- Business PO allocation -->
+      <div class="cap-card">
+        <div class="cap-head">
+          <div class="cicon"><i class="fa-solid fa-user-tie"></i></div>
+          <div>
+            <div class="ctitle2">Business PO</div>
+            <div class="csub2">Pods 1–4 · BUs 1–4</div>
+          </div>
+        </div>
+        <p class="cap-tension">Skews to business demand — no large migration backlog pushing on this track.</p>
+        <div class="cap-bar">
+          <div class="cap-seg seg-blue" style="flex:65;"><span>65%</span></div>
+          <div class="cap-seg seg-amber" style="flex:15;"><span>15%</span></div>
+          <div class="cap-seg seg-teal" style="flex:12;"><span>12%</span></div>
+          <div class="cap-seg seg-purple" style="flex:8;"><span>8%</span></div>
+        </div>
+        <div class="cap-rows">
+          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">65%</div><div class="rtext"><b>Business Growth &amp; Pain Points</b><span>Workflow fixes &amp; process improvements across BUs 1–4</span></div></div>
+          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">15%</div><div class="rtext"><b>Operational Support</b><span>Keeping current processes &amp; tools running (KTLO)</span></div></div>
+          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">12%</div><div class="rtext"><b>Technical Enablement &amp; Debt</b><span>Data cleanup &amp; integrations that speed future work</span></div></div>
+          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">8%</div><div class="rtext"><b>Innovation &amp; Discovery</b><span>Mini-discovery spikes on new business ideas</span></div></div>
+        </div>
+      </div>
+
+      <!-- App Dev PO allocation -->
+      <div class="cap-card teal-card">
+        <div class="cap-head">
+          <div class="cicon"><i class="fa-solid fa-code-branch"></i></div>
+          <div>
+            <div class="ctitle2">App Dev PO</div>
+            <div class="csub2">Pod 5 · 5 Apps + DT Team</div>
+          </div>
+        </div>
+        <p class="cap-tension">Balances two competing streams — reactive BU features vs. proactive DT initiatives.</p>
+        <div class="cap-bar">
+          <div class="cap-seg seg-blue" style="flex:50;"><span>50%</span></div>
+          <div class="cap-seg seg-teal" style="flex:25;"><span>25%</span></div>
+          <div class="cap-seg seg-amber" style="flex:15;"><span>15%</span></div>
+          <div class="cap-seg seg-purple" style="flex:10;"><span>10%</span></div>
+        </div>
+        <div class="cap-rows">
+          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">50%</div><div class="rtext"><b>Business Feature Requests <span style="color:#60a5fa;font-weight:700;">· BU Stream</span></b><span>New capabilities across Galaxy, Evo Edge, Evo Automate, Amp Edge, Sigma</span></div></div>
+          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">25%</div><div class="rtext"><b>Strategic Initiatives &amp; Migrations <span style="color:#2dd4bf;font-weight:700;">· DT Stream</span></b><span>Platform migrations, version upgrades &amp; DT Roadmap projects</span></div></div>
+          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">15%</div><div class="rtext"><b>Operational Support</b><span>Keeping the 5 apps running — bug fixes, patches, KTLO</span></div></div>
+          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">10%</div><div class="rtext"><b>Innovation &amp; Discovery</b><span>High-risk/high-reward spikes &amp; CI mini-discovery by BA/SA</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cap-note">
+      <i class="fa-solid fa-shield-halved"></i>
+      <p><strong>Why buckets, not a single ranked list:</strong> The allocation is the guardrail that operationalizes the two-PO split. It prevents big migration projects from consuming all of Pod 5, and stops business features from starving the tech debt that keeps the apps alive — making "DT can't be ignored, but also can't hijack the transformation" a measurable commitment rather than a hope.</p>
     </div>
   </section>
 
