@@ -373,6 +373,10 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
 .rgt-item .swatch{width:14px;height:14px;min-width:14px;border-radius:4px;margin:0;}
 .rgt-item b{color:#dbe8fb;font-size:13.5px;font-weight:800;}
 .rgt-item .rgt-def{color:#6a80a0;font-size:12px;}
+.role-badge{font-size:9px;font-weight:800;padding:2px 7px;border-radius:8px;text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;margin-left:6px;}
+.role-badge.ba{background:rgba(37,99,235,0.18);color:var(--blue-ll);border:1px solid rgba(96,165,250,0.4);}
+.role-badge.sa{background:rgba(13,148,136,0.18);color:var(--teal-ll);border:1px solid rgba(45,212,191,0.4);}
+.role-badge.shared{background:rgba(120,140,170,0.15);color:#a8bcd8;border:1px solid rgba(120,140,170,0.35);}
 .cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
 .cap-card{
   background:rgba(14,35,64,0.72);border:1.5px solid rgba(37,99,235,0.4);border-radius:16px;
@@ -695,74 +699,74 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
 
   <!-- ============ CAPACITY ALLOCATION ============ -->
   <section class="section cap-section">
-    <div class="section-head"><span class="bar"></span><h2>Capacity Allocation Strategy</h2></div>
-    <p class="section-sub"><strong style="color:#93c5fd;">Outcome-based</strong> — capacity is committed to strategic goals, each with a KPI, so the backlog is a portfolio of investments, not just a ranked list.</p>
+    <div class="section-head"><span class="bar"></span><h2>Work Effort Allocation</h2></div>
+    <p class="section-sub">How a pod's actual delivery hours split across the <strong style="color:#93c5fd;">lifecycle activities a BA &amp; SA perform</strong> — a target for balancing each person's week.</p>
     <div class="cap-intro">
-      <i class="fa-solid fa-bullseye"></i>
-      <div>Every request is tagged not by <em>what it is</em>, but by <strong style="color:#93c5fd;">the business goal it advances</strong> — and each goal carries a KPI the PO is accountable for moving. At review, POs report <strong style="color:#93c5fd;">KPI movement, not story points</strong>. Migrations &amp; upgrades (the <span style="color:#2dd4bf;">DT-push stream</span>) live under <strong style="color:#5eead4;">Resilience &amp; Risk</strong> — justified by the risk they retire; feature work (<span style="color:#60a5fa;">BU-pull</span>) drives Growth, Efficiency &amp; Experience.</div>
+      <i class="fa-solid fa-list-check"></i>
+      <div>Rather than categorizing <em>demand</em>, this splits the pod's <strong style="color:#93c5fd;">effort</strong> across the four stages of delivery work. Each bucket has a natural <strong style="color:#60a5fa;">role lead</strong> — <span style="color:#93c5fd;">BA</span> owns the front-end analysis, <span style="color:#5eead4;">SA</span> owns the build — but both contribute throughout. It's a guardrail so a pod doesn't spend all week firefighting support with no time for discovery.</div>
     </div>
 
-    <!-- Outcome pillar legend with KPIs -->
+    <!-- Work-effort bucket legend -->
     <div class="rgt-legend">
-      <div class="rgt-item"><span class="swatch sw-blue"></span><b><i class="fa-solid fa-chart-line" style="margin-right:5px;"></i>Growth &amp; Enablement</b><span class="rgt-def">KPI: new revenue / capability features shipped</span></div>
-      <div class="rgt-item"><span class="swatch sw-amber"></span><b><i class="fa-solid fa-gauge-high" style="margin-right:5px;"></i>Efficiency &amp; Productivity</b><span class="rgt-def">KPI: manual hours saved · cycle-time ↓</span></div>
-      <div class="rgt-item"><span class="swatch sw-teal"></span><b><i class="fa-solid fa-shield-halved" style="margin-right:5px;"></i>Resilience &amp; Risk</b><span class="rgt-def">KPI: uptime · EOL systems retired · audit findings closed</span></div>
-      <div class="rgt-item"><span class="swatch sw-purple"></span><b><i class="fa-solid fa-face-smile" style="margin-right:5px;"></i>Experience &amp; Adoption</b><span class="rgt-def">KPI: active adoption % · satisfaction score</span></div>
+      <div class="rgt-item"><span class="swatch sw-blue"></span><b><i class="fa-solid fa-magnifying-glass" style="margin-right:5px;"></i>Discovery &amp; Analysis</b><span class="rgt-def">Elicitation, process mapping, user stories, acceptance criteria</span></div>
+      <div class="rgt-item"><span class="swatch sw-teal"></span><b><i class="fa-solid fa-screwdriver-wrench" style="margin-right:5px;"></i>Design &amp; Build</b><span class="rgt-def">Solution design, configuration, development, integrations</span></div>
+      <div class="rgt-item"><span class="swatch sw-amber"></span><b><i class="fa-solid fa-vial-circle-check" style="margin-right:5px;"></i>Test &amp; Validate</b><span class="rgt-def">QA, UAT coordination, release validation</span></div>
+      <div class="rgt-item"><span class="swatch sw-purple"></span><b><i class="fa-solid fa-headset" style="margin-right:5px;"></i>Support &amp; Refine</b><span class="rgt-def">Break-fix / KTLO, enhancements, backlog refinement, ceremonies</span></div>
     </div>
 
     <div class="cap-grid">
-      <!-- Business PO allocation -->
+      <!-- Business PO pods -->
       <div class="cap-card">
         <div class="cap-head">
           <div class="cicon"><i class="fa-solid fa-user-tie"></i></div>
           <div>
-            <div class="ctitle2">Business PO</div>
-            <div class="csub2">Pods 1–4 · BUs 1–4</div>
+            <div class="ctitle2">Business Pods 1–4</div>
+            <div class="csub2">BA-heavy · Business Units</div>
           </div>
         </div>
-        <p class="cap-tension"><strong style="color:#f59e0b;">Efficiency-led</strong> — BU operations work is mostly about streamlining process &amp; removing manual drag.</p>
+        <p class="cap-tension"><strong style="color:#60a5fa;">Analysis-heavy</strong> — business asks arrive fuzzy, so more time goes into discovery, process mapping &amp; clarifying requirements.</p>
         <div class="cap-bar">
-          <div class="cap-seg seg-amber" style="flex:35;"><span>35%</span></div>
-          <div class="cap-seg seg-blue" style="flex:30;"><span>30%</span></div>
+          <div class="cap-seg seg-blue" style="flex:35;"><span>35%</span></div>
+          <div class="cap-seg seg-teal" style="flex:25;"><span>25%</span></div>
+          <div class="cap-seg seg-amber" style="flex:20;"><span>20%</span></div>
           <div class="cap-seg seg-purple" style="flex:20;"><span>20%</span></div>
-          <div class="cap-seg seg-teal" style="flex:15;"><span>15%</span></div>
         </div>
         <div class="cap-rows">
-          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">35%</div><div class="rtext"><b>Efficiency &amp; Productivity</b><span>Automate manual steps &amp; streamline BU workflows → <em style="color:#8fa8c9;">hours saved</em></span></div></div>
-          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">30%</div><div class="rtext"><b>Growth &amp; Enablement</b><span>New capabilities that unlock business value → <em style="color:#8fa8c9;">features shipped</em></span></div></div>
-          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">20%</div><div class="rtext"><b>Experience &amp; Adoption</b><span>Usability &amp; satisfaction improvements → <em style="color:#8fa8c9;">adoption %</em></span></div></div>
-          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">15%</div><div class="rtext"><b>Resilience &amp; Risk</b><span>Data integrity &amp; integration hardening → <em style="color:#8fa8c9;">risk retired</em></span></div></div>
+          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">35%</div><div class="rtext"><b>Discovery &amp; Analysis <span class="role-badge ba">BA-led</span></b><span>Stakeholder workshops, process mapping, writing stories &amp; acceptance criteria</span></div></div>
+          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">25%</div><div class="rtext"><b>Design &amp; Build <span class="role-badge sa">SA-led</span></b><span>Solution design, configuration &amp; development for BU requests</span></div></div>
+          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">20%</div><div class="rtext"><b>Test &amp; Validate <span class="role-badge shared">Shared</span></b><span>QA &amp; UAT coordination with business users</span></div></div>
+          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">20%</div><div class="rtext"><b>Support &amp; Refine <span class="role-badge shared">Shared</span></b><span>Break-fix, enhancements, backlog refinement &amp; ceremonies</span></div></div>
         </div>
       </div>
 
-      <!-- App Dev PO allocation -->
+      <!-- App Dev PO pod -->
       <div class="cap-card teal-card">
         <div class="cap-head">
           <div class="cicon"><i class="fa-solid fa-code-branch"></i></div>
           <div>
-            <div class="ctitle2">App Dev PO</div>
-            <div class="csub2">Pod 5 · 5 Apps + DT Team</div>
+            <div class="ctitle2">App Dev Pod 5</div>
+            <div class="csub2">SA-heavy · 5 Apps + DT Team</div>
           </div>
         </div>
-        <p class="cap-tension"><strong style="color:#60a5fa;">Growth</strong> + <strong style="color:#2dd4bf;">Resilience</strong> heavy — carries both new features and the platform / migration load.</p>
+        <p class="cap-tension"><strong style="color:#2dd4bf;">Build-heavy</strong> — migrations, upgrades &amp; features are more technical, so effort shifts to build &amp; testing.</p>
         <div class="cap-bar">
-          <div class="cap-seg seg-blue" style="flex:35;"><span>35%</span></div>
-          <div class="cap-seg seg-teal" style="flex:30;"><span>30%</span></div>
-          <div class="cap-seg seg-amber" style="flex:20;"><span>20%</span></div>
-          <div class="cap-seg seg-purple" style="flex:15;"><span>15%</span></div>
+          <div class="cap-seg seg-teal" style="flex:35;"><span>35%</span></div>
+          <div class="cap-seg seg-amber" style="flex:25;"><span>25%</span></div>
+          <div class="cap-seg seg-purple" style="flex:20;"><span>20%</span></div>
+          <div class="cap-seg seg-blue" style="flex:20;"><span>20%</span></div>
         </div>
         <div class="cap-rows">
-          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">35%</div><div class="rtext"><b>Growth &amp; Enablement <span style="color:#60a5fa;font-weight:700;">· BU-pull</span></b><span>New features across Galaxy, Evo Edge, Evo Automate, Amp Edge, Sigma → <em style="color:#8fa8c9;">features shipped</em></span></div></div>
-          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">30%</div><div class="rtext"><b>Resilience &amp; Risk <span style="color:#2dd4bf;font-weight:700;">· DT-push</span></b><span>Migrations, version upgrades &amp; roadmap → <em style="color:#8fa8c9;">EOL retired · uptime</em></span></div></div>
-          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">20%</div><div class="rtext"><b>Efficiency &amp; Productivity</b><span>Automation &amp; CI across the 5 apps → <em style="color:#8fa8c9;">cycle-time ↓</em></span></div></div>
-          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">15%</div><div class="rtext"><b>Experience &amp; Adoption</b><span>UX &amp; performance improvements → <em style="color:#8fa8c9;">adoption %</em></span></div></div>
+          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">35%</div><div class="rtext"><b>Design &amp; Build <span class="role-badge sa">SA-led</span></b><span>Technical design, configuration, development &amp; integrations across the 5 apps</span></div></div>
+          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">25%</div><div class="rtext"><b>Test &amp; Validate <span class="role-badge shared">Shared</span></b><span>Regression, migration testing &amp; release validation — higher for upgrades</span></div></div>
+          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">20%</div><div class="rtext"><b>Support &amp; Refine <span class="role-badge shared">Shared</span></b><span>Break-fix / KTLO across 5 apps, CI enhancements &amp; ceremonies</span></div></div>
+          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">20%</div><div class="rtext"><b>Discovery &amp; Analysis <span class="role-badge ba">BA-led</span></b><span>Requirements for features &amp; scoping migrations / roadmap items</span></div></div>
         </div>
       </div>
     </div>
 
     <div class="cap-note">
-      <i class="fa-solid fa-bullseye"></i>
-      <p><strong>Why outcome-based, not activity-based:</strong> Classifying work by type ("features vs. tech debt") lets stakeholders argue about tasks. Committing capacity to <strong>goals with KPIs</strong> changes the conversation — anyone asking for more shows exactly <em>which outcome</em> would be starved, and the PO defends the mix with results, not effort. <em style="color:#8298b8;">Note: these weightings are steady-state targets — re-set them each planning increment against the enterprise's current strategic priorities (e.g. tilt toward Resilience during an active migration year).</em></p>
+      <i class="fa-solid fa-scale-balanced"></i>
+      <p><strong>Why work-effort buckets:</strong> These map directly to the tasks a BA and SA actually do each week, so a pod lead can sanity-check them against reality. The split protects the front of the lifecycle — <strong>Discovery &amp; Analysis won't get squeezed out by support firefighting</strong> — and makes the BA/SA balance explicit: business pods lean analysis, the app dev pod leans build. <em style="color:#8298b8;">Note: these are target mixes — during a heavy migration or a major new build, expect Design/Build and Test to temporarily rise.</em></p>
     </div>
   </section>
 
