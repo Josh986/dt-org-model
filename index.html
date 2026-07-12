@@ -743,6 +743,64 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
     </div>
   </section>
 
+  <!-- ============ JIRA FRONT DOOR ============ -->
+  <section class="section cap-section">
+    <div class="section-head"><span class="bar"></span><h2>The Front Door: Jira Intake &amp; Routing</h2></div>
+    <p class="section-sub">Every request — no matter who asks or which app — enters through <strong style="color:#93c5fd;">one Jira front door</strong>, gets tagged, and is routed to the right Product Owner.</p>
+
+    <div class="jira-lead">
+      <div class="jl-ic"><i class="fa-solid fa-door-open"></i></div>
+      <p><b>No side-channel emails, hallway asks, or "quick favors."</b> A single Jira intake captures every request with the tags that drive routing — <b>App / Area</b>, <b>Type</b> (feature · migration · support · urgent), <b>Requestor</b>, and <b>Priority</b>. Those tags decide which PO's backlog the ticket lands in — and let the POs <strong style="color:#fbbf24;">reallocate</strong> work that came to the wrong door.</p>
+    </div>
+
+    <!-- Front door intake -->
+    <div class="jira-door">
+      <div class="jira-door-h"><i class="fa-solid fa-ticket" style="color:#60a5fa;"></i> Jira Intake — 5 requests arrive <span class="badge">1 front door</span></div>
+      <p class="sub">The same five items from Josh's example, as they'd be filed:</p>
+      <div class="jira-chips">
+        <div class="jira-chip"><span class="jc-key">DT-101</span><span class="jc-t">AMP — KPI safety dashboard</span><div class="jc-tags"><span class="scn-tag bu">Reporting</span><span class="scn-tag urg">Med</span></div></div>
+        <div class="jira-chip"><span class="jc-key">DT-102</span><span class="jc-t">Galaxy — validate features + stories</span><div class="jc-tags"><span class="scn-tag dt">DT-push</span></div></div>
+        <div class="jira-chip"><span class="jc-key">DT-103</span><span class="jc-t">Sigma — migrate all Power BI</span><div class="jc-tags"><span class="scn-tag dt">Migration</span><span class="scn-tag road">Program</span></div></div>
+        <div class="jira-chip"><span class="jc-key">DT-104</span><span class="jc-t">AMP Edge — validate DT features</span><div class="jc-tags"><span class="scn-tag dt">DT-push</span></div></div>
+        <div class="jira-chip"><span class="jc-key">DT-105</span><span class="jc-t">EVO — urgent request</span><div class="jc-tags"><span class="scn-tag urg">Urgent</span></div></div>
+      </div>
+    </div>
+
+    <!-- funnel -->
+    <div class="jira-funnel">
+      <i class="fa-solid fa-angle-down"></i>
+      <span class="fl"><i class="fa-solid fa-shuffle"></i> Triaged by tag at sprint planning → routed to the right Product Owner</span>
+      <i class="fa-solid fa-angle-down"></i>
+    </div>
+
+    <!-- routing lanes -->
+    <div class="scn-cols">
+      <!-- Business PO lane -->
+      <div class="scn-panel">
+        <div class="scn-ph"><span class="ci" style="background:rgba(37,99,235,0.16);color:#93c5fd;"><i class="fa-solid fa-user-tie"></i></span>Business PO → Pods 1–4</div>
+        <p class="scn-sub">Business-reporting &amp; BU pain-point work.</p>
+        <div class="scn-item"><div class="scn-num">101</div><div class="scn-it-txt"><b>AMP — KPI safety dashboard <span class="scn-tag re">Reallocated</span></b><span>Filed against "AMP," but it's a reporting need for a Business Unit — the business track owns reporting, so it's routed here. Never lands on Josh.</span></div></div>
+        <div class="scn-callout grn"><i class="fa-solid fa-arrow-right-arrow-left"></i><div><strong>Reallocation #1:</strong> wrong door → the Business PO picks it up, freeing App Dev capacity for true platform work.</div></div>
+      </div>
+
+      <!-- App Dev PO lane -->
+      <div class="scn-panel good">
+        <div class="scn-ph"><span class="ci grn"><i class="fa-solid fa-code-branch"></i></span>App Dev PO → Pod 5 (Josh)</div>
+        <p class="scn-sub">App features, migrations &amp; platform work across the 5 apps.</p>
+        <div class="scn-item"><div class="scn-num">102</div><div class="scn-it-txt"><b>Galaxy — validate + stories <span class="scn-tag kept">Stays · Josh</span></b><span>Genuine app-dev work — kept on Josh's Pod 5 backlog</span></div></div>
+        <div class="scn-item"><div class="scn-num">104</div><div class="scn-it-txt"><b>AMP Edge — validate features <span class="scn-tag kept">Stays · Josh</span></b><span>App-dev validation — kept with Josh</span></div></div>
+        <div class="scn-item"><div class="scn-num">103</div><div class="scn-it-txt"><b>Sigma migration <span class="scn-tag road">Split · Program</span></b><span>Recognized as a multi-quarter program: a discovery slice to Josh now, the bulk sequenced on the DT Roadmap across the year</span></div></div>
+        <div class="scn-item"><div class="scn-num">105</div><div class="scn-it-txt"><b>EVO — urgent <span class="scn-tag re">Load-balanced</span></b><span>Josh is at capacity → the PO reassigns it to a Pod 5 teammate with room, instead of stacking it on him</span></div></div>
+        <div class="scn-callout grn"><i class="fa-solid fa-arrow-right-arrow-left"></i><div><strong>Reallocations #2 &amp; #3:</strong> the Sigma program is sliced across the year, and the urgent EVO fire is load-balanced to a teammate — so no single person absorbs a spike.</div></div>
+      </div>
+    </div>
+
+    <div class="cap-note" style="margin-top:24px;">
+      <i class="fa-solid fa-inbox"></i>
+      <p><strong>Where the work actually ends up:</strong> Of five requests aimed at one BA, only <strong>three</strong> stay with Josh — Galaxy, AMP Edge, and a Sigma discovery slice. The AMP dashboard moves to the Business PO, the urgent EVO is load-balanced to a teammate, and the Sigma migration bulk is roadmapped across the year. The front door turns <em style="color:#8fa8c9;">"everything on Josh"</em> into <em style="color:#93c5fd;">"the right work with the right owner"</em> — which is exactly what makes his 15-point sprint below achievable.</p>
+    </div>
+  </section>
+
   <!-- ============ REQUEST FLOW ============ -->
   <section class="flow-section">
     <div class="section-head"><span class="bar"></span><h2>Request Flow</h2></div>
@@ -834,64 +892,6 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
     <div class="cap-note">
       <i class="fa-solid fa-shield-halved"></i>
       <p><strong>Why buckets, not a single ranked list:</strong> The allocation is the guardrail that operationalizes the two-PO split. It prevents big migration projects from consuming all of Pod 5, and stops business features from starving the tech debt that keeps the apps alive — making "DT can't be ignored, but also can't hijack the transformation" a measurable commitment rather than a hope.</p>
-    </div>
-  </section>
-
-  <!-- ============ JIRA FRONT DOOR ============ -->
-  <section class="section cap-section">
-    <div class="section-head"><span class="bar"></span><h2>The Front Door: Jira Intake &amp; Routing</h2></div>
-    <p class="section-sub">Every request — no matter who asks or which app — enters through <strong style="color:#93c5fd;">one Jira front door</strong>, gets tagged, and is routed to the right Product Owner.</p>
-
-    <div class="jira-lead">
-      <div class="jl-ic"><i class="fa-solid fa-door-open"></i></div>
-      <p><b>No side-channel emails, hallway asks, or "quick favors."</b> A single Jira intake captures every request with the tags that drive routing — <b>App / Area</b>, <b>Type</b> (feature · migration · support · urgent), <b>Requestor</b>, and <b>Priority</b>. Those tags decide which PO's backlog the ticket lands in — and let the POs <strong style="color:#fbbf24;">reallocate</strong> work that came to the wrong door.</p>
-    </div>
-
-    <!-- Front door intake -->
-    <div class="jira-door">
-      <div class="jira-door-h"><i class="fa-solid fa-ticket" style="color:#60a5fa;"></i> Jira Intake — 5 requests arrive <span class="badge">1 front door</span></div>
-      <p class="sub">The same five items from Josh's example, as they'd be filed:</p>
-      <div class="jira-chips">
-        <div class="jira-chip"><span class="jc-key">DT-101</span><span class="jc-t">AMP — KPI safety dashboard</span><div class="jc-tags"><span class="scn-tag bu">Reporting</span><span class="scn-tag urg">Med</span></div></div>
-        <div class="jira-chip"><span class="jc-key">DT-102</span><span class="jc-t">Galaxy — validate features + stories</span><div class="jc-tags"><span class="scn-tag dt">DT-push</span></div></div>
-        <div class="jira-chip"><span class="jc-key">DT-103</span><span class="jc-t">Sigma — migrate all Power BI</span><div class="jc-tags"><span class="scn-tag dt">Migration</span><span class="scn-tag road">Program</span></div></div>
-        <div class="jira-chip"><span class="jc-key">DT-104</span><span class="jc-t">AMP Edge — validate DT features</span><div class="jc-tags"><span class="scn-tag dt">DT-push</span></div></div>
-        <div class="jira-chip"><span class="jc-key">DT-105</span><span class="jc-t">EVO — urgent request</span><div class="jc-tags"><span class="scn-tag urg">Urgent</span></div></div>
-      </div>
-    </div>
-
-    <!-- funnel -->
-    <div class="jira-funnel">
-      <i class="fa-solid fa-angle-down"></i>
-      <span class="fl"><i class="fa-solid fa-shuffle"></i> Triaged by tag at sprint planning → routed to the right Product Owner</span>
-      <i class="fa-solid fa-angle-down"></i>
-    </div>
-
-    <!-- routing lanes -->
-    <div class="scn-cols">
-      <!-- Business PO lane -->
-      <div class="scn-panel">
-        <div class="scn-ph"><span class="ci" style="background:rgba(37,99,235,0.16);color:#93c5fd;"><i class="fa-solid fa-user-tie"></i></span>Business PO → Pods 1–4</div>
-        <p class="scn-sub">Business-reporting &amp; BU pain-point work.</p>
-        <div class="scn-item"><div class="scn-num">101</div><div class="scn-it-txt"><b>AMP — KPI safety dashboard <span class="scn-tag re">Reallocated</span></b><span>Filed against "AMP," but it's a reporting need for a Business Unit — the business track owns reporting, so it's routed here. Never lands on Josh.</span></div></div>
-        <div class="scn-callout grn"><i class="fa-solid fa-arrow-right-arrow-left"></i><div><strong>Reallocation #1:</strong> wrong door → the Business PO picks it up, freeing App Dev capacity for true platform work.</div></div>
-      </div>
-
-      <!-- App Dev PO lane -->
-      <div class="scn-panel good">
-        <div class="scn-ph"><span class="ci grn"><i class="fa-solid fa-code-branch"></i></span>App Dev PO → Pod 5 (Josh)</div>
-        <p class="scn-sub">App features, migrations &amp; platform work across the 5 apps.</p>
-        <div class="scn-item"><div class="scn-num">102</div><div class="scn-it-txt"><b>Galaxy — validate + stories <span class="scn-tag kept">Stays · Josh</span></b><span>Genuine app-dev work — kept on Josh's Pod 5 backlog</span></div></div>
-        <div class="scn-item"><div class="scn-num">104</div><div class="scn-it-txt"><b>AMP Edge — validate features <span class="scn-tag kept">Stays · Josh</span></b><span>App-dev validation — kept with Josh</span></div></div>
-        <div class="scn-item"><div class="scn-num">103</div><div class="scn-it-txt"><b>Sigma migration <span class="scn-tag road">Split · Program</span></b><span>Recognized as a multi-quarter program: a discovery slice to Josh now, the bulk sequenced on the DT Roadmap across the year</span></div></div>
-        <div class="scn-item"><div class="scn-num">105</div><div class="scn-it-txt"><b>EVO — urgent <span class="scn-tag re">Load-balanced</span></b><span>Josh is at capacity → the PO reassigns it to a Pod 5 teammate with room, instead of stacking it on him</span></div></div>
-        <div class="scn-callout grn"><i class="fa-solid fa-arrow-right-arrow-left"></i><div><strong>Reallocations #2 &amp; #3:</strong> the Sigma program is sliced across the year, and the urgent EVO fire is load-balanced to a teammate — so no single person absorbs a spike.</div></div>
-      </div>
-    </div>
-
-    <div class="cap-note" style="margin-top:24px;">
-      <i class="fa-solid fa-inbox"></i>
-      <p><strong>Where the work actually ends up:</strong> Of five requests aimed at one BA, only <strong>three</strong> stay with Josh — Galaxy, AMP Edge, and a Sigma discovery slice. The AMP dashboard moves to the Business PO, the urgent EVO is load-balanced to a teammate, and the Sigma migration bulk is roadmapped across the year. The front door turns <em style="color:#8fa8c9;">"everything on Josh"</em> into <em style="color:#93c5fd;">"the right work with the right owner"</em> — which is exactly what makes his 15-point sprint below achievable.</p>
     </div>
   </section>
 
