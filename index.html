@@ -317,6 +317,47 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
 .legend-title{color:#243550;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0.16em;
   border-right:1px solid #1a3050;padding-right:16px;}
 
+/* ============ DUAL STREAM (App Dev PO) ============ */
+.streams-label{
+  display:flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:800;color:#5f7ba3;text-transform:uppercase;letter-spacing:0.14em;
+  margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(96,165,250,0.15);
+}
+.streams-label i{color:var(--blue-l);font-size:13px;}
+.dual-streams{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+.stream{border-radius:10px;padding:12px 12px;}
+.stream-bu{background:rgba(37,99,235,0.1);border:1.5px solid rgba(96,165,250,0.4);}
+.stream-dt{background:rgba(13,148,136,0.1);border:1.5px solid rgba(45,212,191,0.4);}
+.stream-head{display:flex;align-items:center;gap:9px;margin-bottom:8px;}
+.stream-icon{width:30px;height:30px;min-width:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.stream-bu .stream-icon{background:rgba(37,99,235,0.18);border:1px solid rgba(96,165,250,0.35);}
+.stream-bu .stream-icon i{color:var(--blue-l);font-size:14px;}
+.stream-dt .stream-icon{background:rgba(13,148,136,0.18);border:1px solid rgba(45,212,191,0.35);}
+.stream-dt .stream-icon i{color:var(--teal-l);font-size:14px;}
+.stream-title{font-size:12.5px;font-weight:800;line-height:1.1;}
+.stream-bu .stream-title{color:var(--blue-ll);}
+.stream-dt .stream-title{color:var(--teal-ll);}
+.stream-mode{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-top:2px;}
+.stream-bu .stream-mode{color:rgba(96,165,250,0.65);}
+.stream-dt .stream-mode{color:rgba(45,212,191,0.65);}
+.stream-source{font-size:10px;font-weight:700;padding:3px 8px;border-radius:6px;display:inline-block;margin-bottom:6px;}
+.stream-bu .stream-source{background:rgba(37,99,235,0.15);color:#93c5fd;}
+.stream-dt .stream-source{background:rgba(13,148,136,0.15);color:var(--teal-l);}
+.stream-desc{font-size:11px;line-height:1.45;}
+.stream-bu .stream-desc{color:#7d94b8;}
+.stream-dt .stream-desc{color:#5f9e98;}
+.balance-note{
+  display:flex;align-items:flex-start;gap:10px;
+  background:rgba(139,92,246,0.08);border:1.5px solid rgba(139,92,246,0.28);
+  border-radius:10px;padding:10px 12px;margin-bottom:4px;
+}
+.balance-note i{color:#c084fc;font-size:13px;margin-top:2px;flex-shrink:0;}
+.balance-note span{color:#c4a8e0;font-size:11.5px;font-weight:600;line-height:1.4;}
+/* Stream tags inside Pod 5 */
+.stream-tag{font-size:9px;font-weight:700;padding:1px 6px;border-radius:8px;margin-left:4px;white-space:nowrap;}
+.stream-tag.bu{background:rgba(37,99,235,0.15);color:var(--blue-ll);border:1px solid rgba(96,165,250,0.3);}
+.stream-tag.dt{background:rgba(13,148,136,0.15);color:var(--teal-ll);border:1px solid rgba(45,212,191,0.3);}
+
 @media (max-width:1100px){
   .key-to-po{gap:120px;}
   .flow-steps{gap:14px;}
@@ -356,7 +397,7 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
 
     <!-- LAYER 1: BUSINESS UNITS -->
     <div class="layer-label"><span class="num">1</span><span>Business Units</span><span class="line"></span></div>
-    <div class="bu-row">
+    <div class="bu-row" style="grid-template-columns:repeat(4,1fr);">
       <!-- BU1 -->
       <div class="card bu-card">
         <div class="bu-tags"><span class="tag amber">Ops &amp; Process Requests</span><span class="tag blue">App Requests</span></div>
@@ -385,23 +426,16 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
         <div class="bu-title">Ops &amp; Services</div>
         <div class="bu-desc">AMP Ops · Evolution Ops<br>BDEV</div>
       </div>
-      <!-- BU5 TBD -->
-      <div class="card bu-card tbd">
-        <div class="bu-tags">&nbsp;</div>
-        <div class="bu-icon"><i class="fa-solid fa-circle-question"></i></div>
-        <div class="bu-title">New Business Unit</div>
-        <span class="tbd-pill">To Be Defined</span>
-      </div>
     </div>
 
     <!-- vertical connectors from BU1-4 to Champions -->
-    <div class="champ-connect-row" style="margin-top:0;">
-      <div class="vconnect"></div><div class="vconnect"></div><div class="vconnect"></div><div class="vconnect"></div><div></div>
+    <div class="champ-connect-row" style="margin-top:0;grid-template-columns:repeat(4,1fr);">
+      <div class="vconnect"></div><div class="vconnect"></div><div class="vconnect"></div><div class="vconnect"></div>
     </div>
 
     <!-- LAYER 2: CHAMPIONS -->
     <div class="layer-label"><span class="num" style="background:rgba(217,119,6,0.25);border-color:rgba(245,158,11,0.5);">2</span><span style="color:#9c7838;">BU Champions</span><span class="line" style="background:linear-gradient(90deg,rgba(245,158,11,0.35),transparent);"></span></div>
-    <div class="champ-row">
+    <div class="champ-row" style="grid-template-columns:repeat(4,1fr);">
       <div class="card champ-card">
         <i class="fa-solid fa-crown crown"></i>
         <div class="ctitle">BU Champion</div>
@@ -422,14 +456,13 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
         <div class="ctitle">BU Champion</div>
         <div class="csub">Approves &amp; validates backlog items</div>
       </div>
-      <div class="champ-empty"></div>
     </div>
 
     <!-- amber dashed bus connecting champions + arrows down -->
     <div class="champ-bus-wrap">
-      <div class="champ-bus"></div>
-      <div class="champ-down">
-        <div class="arrow"></div><div class="arrow"></div><div class="arrow"></div><div class="arrow"></div><div></div>
+      <div class="champ-bus" style="left:12.5%;right:12.5%;"></div>
+      <div class="champ-down" style="grid-template-columns:repeat(4,1fr);">
+        <div class="arrow"></div><div class="arrow"></div><div class="arrow"></div><div class="arrow"></div>
       </div>
     </div>
 
@@ -474,20 +507,42 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
           </div>
         </div>
         <div class="po-body">
-          <div class="po-bullet"><span class="b"><i class="fa-solid fa-chevron-right"></i></span><span>Visits all 5 BUs + Internal DT Team</span></div>
-          <div class="po-bullet"><span class="b"><i class="fa-solid fa-chevron-right"></i></span><span>Prioritizes backlog across 5 apps</span></div>
+          <div class="streams-label"><i class="fa-solid fa-arrows-to-circle"></i> Dual Input Streams</div>
+          <div class="dual-streams">
+            <!-- Stream 1: BU Feature Requests -->
+            <div class="stream stream-bu">
+              <div class="stream-head">
+                <div class="stream-icon"><i class="fa-solid fa-building-user"></i></div>
+                <div>
+                  <div class="stream-title">Feature Requests</div>
+                  <div class="stream-mode">Business-Pull · Reactive</div>
+                </div>
+              </div>
+              <div class="stream-source">Via BU Champions → BUs 1–4</div>
+              <div class="stream-desc">New app capabilities the business needs — driven by user demand</div>
+            </div>
+            <!-- Stream 2: DT Strategic Initiatives -->
+            <div class="stream stream-dt">
+              <div class="stream-head">
+                <div class="stream-icon"><i class="fa-solid fa-users-gear"></i></div>
+                <div>
+                  <div class="stream-title">Strategic Initiatives</div>
+                  <div class="stream-mode">DT-Push · Proactive</div>
+                </div>
+              </div>
+              <div class="stream-source">From Internal DT Team</div>
+              <div class="stream-desc">Migrations, platform upgrades &amp; DT Roadmap — ahead of the business</div>
+            </div>
+          </div>
+          <div class="balance-note">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span>App Dev PO balances <strong style="color:#d8b4fe;">reactive feature requests</strong> against <strong style="color:#5eead4;">proactive strategic initiatives</strong> — both compete for Pod 5 capacity</span>
+          </div>
+          <div class="po-bullet"><span class="b"><i class="fa-solid fa-chevron-right"></i></span><span>Manages unified backlog across 5 apps</span></div>
           <div class="chips">
             <span class="chip">Galaxy</span><span class="chip">Evo Edge</span><span class="chip">Evo Automate</span><span class="chip">Amp Edge</span><span class="chip">Sigma</span>
           </div>
           <div class="po-bullet"><span class="b"><i class="fa-solid fa-chevron-right"></i></span><span>Passes prioritized work to <strong>Pod 5</strong></span></div>
-          <div class="dt-box">
-            <div class="dth"><i class="fa-solid fa-users-gear"></i><span>Internal DT Team</span></div>
-            <div class="dt-badges">
-              <span class="tbadge">Migration Projects</span>
-              <span class="tbadge">DT Roadmap Items</span>
-              <span class="tbadge">Tech Upgrades</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -521,7 +576,7 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
         <div class="pod-head"><div><div class="pn">Pod 3</div><div class="pd">Mfg &amp; Supply Chain</div></div><span class="pod-badge">BA/SA</span></div>
         <div class="pod-body">
           <div class="person"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><div class="pname">Frank Tallerine</div><div class="prole">Business Analyst</div></div></div>
-          <div class="sa-needed"><div class="avatar"><i class="fa-solid fa-user-plus"></i></div><div><div class="pname">SA Needed</div><div class="prole">Systems Analyst · Open</div></div></div>
+          <div class="person"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><div class="pname">Dax Baca</div><div class="prole">Systems Analyst</div></div></div>
         </div>
       </div>
       <!-- Pod 4 -->
@@ -545,9 +600,10 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
           <div class="pod5-group">
             <div class="glabel">Handles</div>
             <div class="pod5-handles">
-              <div class="h"><span class="d"></span>Feature Requests</div>
-              <div class="h"><span class="d"></span>Migrations</div>
-              <div class="h"><span class="d"></span>Digital Transformation Projects</div>
+              <div class="h"><span class="d" style="background:var(--blue-l);box-shadow:0 0 5px var(--blue-l);"></span>Feature Requests <span class="stream-tag bu">BU Stream</span></div>
+              <div class="h"><span class="d"></span>Platform Upgrades <span class="stream-tag dt">DT Stream</span></div>
+              <div class="h"><span class="d"></span>Migration Projects <span class="stream-tag dt">DT Stream</span></div>
+              <div class="h"><span class="d"></span>DT Roadmap &amp; CI Items <span class="stream-tag dt">DT Stream</span></div>
             </div>
           </div>
         </div>
@@ -560,13 +616,13 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
     <div class="section-head"><span class="bar"></span><h2>Request Flow</h2></div>
     <p class="section-sub" style="color:#6ea89e;">The end-to-end journey of a request — from origination to delivery and feedback.</p>
     <div class="flow-steps">
-      <div class="step"><div class="snum">1</div><h4>Requests Originate</h4><p>BUs submit ops/process + app requests; Champions validate.</p></div>
+      <div class="step"><div class="snum">1</div><h4>Requests Originate</h4><p>BUs submit feature &amp; ops requests. <em style="color:#60a5fa;">Separately</em>, the internal DT Team surfaces proactive strategic initiatives.</p></div>
       <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="step"><div class="snum">2</div><h4>Champion Approves</h4><p>BU Champions review and approve backlog items.</p></div>
+      <div class="step"><div class="snum">2</div><h4>Champion Approves</h4><p>BU Champions review and approve <strong style="color:#fbbf24;">BU-originated</strong> backlog items before they reach the PO.</p></div>
       <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="step"><div class="snum">3</div><h4>PO Intake</h4><p>Business PO or App Dev PO receives approved requests.</p></div>
+      <div class="step"><div class="snum">3</div><h4>PO Intake</h4><p>Business PO receives BU items. App Dev PO receives both <strong style="color:#93c5fd;">BU feature requests</strong> and <strong style="color:#5eead4;">DT strategic initiatives</strong> — two competing streams.</p></div>
       <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="step"><div class="snum">4</div><h4>Prioritization</h4><p>POs sequence work across their respective backlogs.</p></div>
+      <div class="step"><div class="snum">4</div><h4>Prioritization</h4><p>POs sequence work. App Dev PO must balance reactive demand from BUs against proactive DT-push projects.</p></div>
       <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="step"><div class="snum">5</div><h4>Assign to Pod</h4><p>Work assigned to the right pod based on BU or app domain.</p></div>
       <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
