@@ -471,6 +471,9 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
 /* Current vs Future — equal-height, scrollable panels */
 .cs-cols{align-items:stretch;}
 .cs-cols .scn-panel{display:flex;flex-direction:column;}
+/* anchor each panel's closing callout to the bottom so both columns' callouts align
+   and the shorter Current State panel doesn't leave a large empty gap */
+.cs-cols .scn-panel > .scn-callout{margin-top:auto;}
 .cs-intro{display:flex;gap:12px;align-items:center;background:rgba(8,15,30,0.5);border:1px solid #21375a;border-radius:12px;padding:12px 14px;margin-bottom:14px;}
 .cs-intro .av{width:42px;height:42px;min-width:42px;border-radius:50%;background:linear-gradient(135deg,#ef4444,#b91c1c);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;}
 .cs-cols .scn-panel.good .cs-intro .av{background:linear-gradient(135deg,#14b8a6,#0d9488);}
@@ -787,9 +790,10 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
       </div>
       <!-- Pod 5 TEAL -->
       <div class="pod-card teal">
-        <div class="pod-head"><div><div class="pn">Pod 5</div><div class="pd">App Dev / CI</div></div><span class="pod-badge">BA</span></div>
+        <div class="pod-head"><div><div class="pn">Pod 5</div><div class="pd">App Dev / CI</div></div><span class="pod-badge">BA/SA</span></div>
         <div class="pod-body">
           <div class="person" style="background:#0a2f2e;border-color:rgba(45,212,191,0.35);"><div class="avatar" style="background:#0e4a47;"><i class="fa-solid fa-user"></i></div><div><div class="pname" style="color:#d0f4f0;">Alex Rivera</div><div class="prole" style="color:#5f9e98;">Business Analyst · App Dev</div></div></div>
+          <div class="person" style="background:#0a2f2e;border-color:rgba(45,212,191,0.35);"><div class="avatar" style="background:#0e4a47;"><i class="fa-solid fa-user"></i></div><div><div class="pname" style="color:#d0f4f0;">Marcus Lee</div><div class="prole" style="color:#5f9e98;">Systems Analyst · App Dev</div></div></div>
           <div class="pod5-group">
             <div class="glabel">Apps Supported</div>
             <div class="pod5-chips">
@@ -881,7 +885,7 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
                 <div class="wt-row"><span class="rk">DT-102</span><span class="rt">Galaxy validate + stories — genuine app-dev work. Assigned to <b>Alex Rivera (Pod 5 App Dev BA)</b>.</span><span class="wt-mini kept">→ Pod 5</span></div>
                 <div class="wt-row"><span class="rk">DT-104</span><span class="rt">AMP Edge validate features — app-dev validation. Assigned to <b>Alex Rivera</b>.</span><span class="wt-mini kept">→ Pod 5</span></div>
                 <div class="wt-row"><span class="rk">DT-103</span><span class="rt">Sigma migration — Jane Doe recognizes this as a multi-quarter program. A <b>discovery slice</b> goes to Alex now; the bulk is sequenced on the DT Roadmap.</span><span class="wt-mini road">Split · Program</span></div>
-                <div class="wt-row"><span class="rk">DT-105</span><span class="rt">EVO urgent — Alex is at capacity with the 3 items above, so Jane Doe reassigns this to <b>another Pod 5 resource</b> with room.</span><span class="wt-mini re">Load-Balanced</span></div>
+                <div class="wt-row"><span class="rk">DT-105</span><span class="rt">EVO urgent — Alex is at capacity with the 3 items above, so Jane Doe reassigns this to <b>Marcus Lee (Pod 5 SA)</b>, who has room.</span><span class="wt-mini re">Load-Balanced</span></div>
               </div>
             </div>
           </div>
@@ -933,7 +937,7 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
 
     <!-- Capacity bucket legend -->
     <div class="rgt-legend">
-      <div class="rgt-item"><span class="swatch sw-blue"></span><b>Business Growth / Pain Points</b><span class="rgt-def">High-impact requests from the 5 Business Units (new apps, workflow fixes)</span></div>
+      <div class="rgt-item"><span class="swatch sw-blue"></span><b>Business Growth / Pain Points</b><span class="rgt-def">High-impact requests from the 4 Business Units (new apps, workflow fixes)</span></div>
       <div class="rgt-item"><span class="swatch sw-teal"></span><b>Technical Enablement / Debt</b><span class="rgt-def">Requests from Dev/Data teams that make future work faster or safer (API cleanup, data ingestion)</span></div>
       <div class="rgt-item"><span class="swatch sw-amber"></span><b>Operational Support</b><span class="rgt-def">Keeping the current dashboards and apps running</span></div>
       <div class="rgt-item"><span class="swatch sw-purple"></span><b>Innovation / Discovery</b><span class="rgt-def">High-risk, high-reward technical ideas that need a "mini-discovery" by the BA/SA pod</span></div>
