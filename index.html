@@ -851,6 +851,101 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
     </div>
   </section>
 
+  <!-- ============ REQUEST FLOW ============ -->
+  <section class="flow-section">
+    <div class="section-head"><span class="bar"></span><h2>Request Flow</h2></div>
+    <p class="section-sub" style="color:#6ea89e;">The end-to-end journey of a request — from origination to delivery and feedback.</p>
+    <div class="flow-steps">
+      <div class="step"><div class="snum">1</div><h4>Requests Originate</h4><p>BUs submit feature &amp; ops requests. <em style="color:#60a5fa;">Separately</em>, the internal DT Team surfaces proactive strategic initiatives.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step"><div class="snum">2</div><h4>Backlog Intake</h4><p>Business PO gathers BU requests. App Dev PO gathers both <strong style="color:#93c5fd;">BU feature requests</strong> and <strong style="color:#5eead4;">DT strategic initiatives</strong>.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step"><div class="snum">3</div><h4>Sprint Planning</h4><p>POs and Champions <strong style="color:#fbbf24;">collaborate</strong> to approve and prioritize backlog items together — ensuring business alignment and capacity planning.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step"><div class="snum">4</div><h4>Finalize Priority</h4><p>Approved and sequenced work is ready for assignment. App Dev PO balances reactive BU demand against proactive DT projects.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step"><div class="snum">5</div><h4>Assign to Pod</h4><p>Work assigned to the right pod based on BU or app domain.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="step"><div class="snum">6</div><h4>Deliver</h4><p>BA &amp; SA execute; output delivered back to BU or app.</p></div>
+      <div class="step-arrow"><i class="fa-solid fa-arrow-rotate-left"></i></div>
+      <div class="step feedback"><div class="snum"><i class="fa-solid fa-arrow-rotate-left"></i></div><h4>Feedback Loop</h4><p>Completed work triggers new requests; PO is notified.</p></div>
+    </div>
+  </section>
+
+
+  <!-- ============ CAPACITY ALLOCATION ============ -->
+  <section class="section cap-section">
+    <div class="section-head"><span class="bar"></span><h2>Capacity Allocation Strategy</h2></div>
+    <p class="section-sub">How each PO divides pod capacity into fixed "buckets" so no single type of work dominates.</p>
+    <div class="cap-intro">
+      <i class="fa-solid fa-lightbulb"></i>
+      <div>POs don't just rank requests 1–100. They reserve a <strong style="color:#93c5fd;">percentage of capacity</strong> for each category of work — guaranteeing technical health and innovation aren't crowded out by business demand. Percentages are a starting point, tuned each planning cycle.</div>
+    </div>
+
+    <!-- Capacity bucket legend -->
+    <div class="rgt-legend">
+      <div class="rgt-item"><span class="swatch sw-blue"></span><b>Business Growth / Pain Points</b><span class="rgt-def">High-impact requests from the 4 Business Units (new apps, workflow fixes)</span></div>
+      <div class="rgt-item"><span class="swatch sw-teal"></span><b>Technical Enablement / Debt</b><span class="rgt-def">Requests from Dev/Data teams that make future work faster or safer (API cleanup, data ingestion)</span></div>
+      <div class="rgt-item"><span class="swatch sw-amber"></span><b>Operational Support</b><span class="rgt-def">Keeping the current dashboards and apps running</span></div>
+      <div class="rgt-item"><span class="swatch sw-purple"></span><b>Innovation / Discovery</b><span class="rgt-def">High-risk, high-reward technical ideas that need a "mini-discovery" by the BA/SA pod</span></div>
+    </div>
+
+    <div class="cap-grid">
+      <!-- Business PO allocation -->
+      <div class="cap-card">
+        <div class="cap-head">
+          <div class="cicon"><i class="fa-solid fa-user-tie"></i></div>
+          <div>
+            <div class="ctitle2">Business PO</div>
+            <div class="csub2">Pods 1–4 · BUs 1–4</div>
+          </div>
+        </div>
+        <p class="cap-tension">Skews to business demand — no large migration backlog pushing on this track.</p>
+        <div class="cap-bar">
+          <div class="cap-seg seg-blue" style="flex:60;"><span>60%</span></div>
+          <div class="cap-seg seg-teal" style="flex:20;"><span>20%</span></div>
+          <div class="cap-seg seg-amber" style="flex:10;"><span>10%</span></div>
+          <div class="cap-seg seg-purple" style="flex:10;"><span>10%</span></div>
+        </div>
+        <div class="cap-rows">
+          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">60%</div><div class="rtext"><b>Business Growth / Pain Points</b><span>Workflow fixes &amp; process improvements across BUs 1–4</span></div></div>
+          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">20%</div><div class="rtext"><b>Technical Enablement / Debt</b><span>Data cleanup &amp; integrations that speed future work</span></div></div>
+          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">10%</div><div class="rtext"><b>Operational Support</b><span>Keeping current processes &amp; tools running (KTLO)</span></div></div>
+          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">10%</div><div class="rtext"><b>Innovation / Discovery</b><span>Mini-discovery spikes on new business ideas</span></div></div>
+        </div>
+      </div>
+
+      <!-- App Dev PO allocation -->
+      <div class="cap-card teal-card">
+        <div class="cap-head">
+          <div class="cicon"><i class="fa-solid fa-code-branch"></i></div>
+          <div>
+            <div class="ctitle2">App Dev PO</div>
+            <div class="csub2">Pod 5 · 5 Apps + DT Team</div>
+          </div>
+        </div>
+        <p class="cap-tension">Balances two competing streams — reactive BU features vs. proactive DT initiatives.</p>
+        <div class="cap-bar">
+          <div class="cap-seg seg-blue" style="flex:60;"><span>60%</span></div>
+          <div class="cap-seg seg-teal" style="flex:20;"><span>20%</span></div>
+          <div class="cap-seg seg-amber" style="flex:10;"><span>10%</span></div>
+          <div class="cap-seg seg-purple" style="flex:10;"><span>10%</span></div>
+        </div>
+        <div class="cap-rows">
+          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">60%</div><div class="rtext"><b>Business Growth / Pain Points <span style="color:#60a5fa;font-weight:700;">· BU-pull</span></b><span>New features across Galaxy, Evo Edge, Evo Automate, Amp Edge, Sigma</span></div></div>
+          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">20%</div><div class="rtext"><b>Technical Enablement / Debt <span style="color:#2dd4bf;font-weight:700;">· DT-push</span></b><span>Platform migrations, version upgrades &amp; DT Roadmap projects</span></div></div>
+          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">10%</div><div class="rtext"><b>Operational Support</b><span>Keeping the 5 apps running — bug fixes, patches, KTLO</span></div></div>
+          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">10%</div><div class="rtext"><b>Innovation / Discovery</b><span>High-risk/high-reward spikes &amp; CI mini-discovery by BA/SA</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cap-note">
+      <i class="fa-solid fa-shield-halved"></i>
+      <p><strong>Why buckets, not a single ranked list:</strong> The allocation is the guardrail that operationalizes the two-PO split. It prevents big migration projects from consuming all of Pod 5, and stops business features from starving the tech debt that keeps the apps alive — making "DT can't be ignored, but also can't hijack the transformation" a measurable commitment rather than a hope.</p>
+    </div>
+  </section>
+
   <!-- ============ CURRENT STATE VS FUTURE STATE ============ -->
   <section class="section cap-section">
     <div class="section-head"><span class="bar"></span><h2>Current State vs. Future State: A Sprint in Joshua Ly's World</h2></div>
@@ -942,99 +1037,6 @@ footer .fsub{color:#5f7ba3;font-size:12px;margin-top:6px;letter-spacing:0.03em;}
     </div>
   </section>
 
-  <!-- ============ REQUEST FLOW ============ -->
-  <section class="flow-section">
-    <div class="section-head"><span class="bar"></span><h2>Request Flow</h2></div>
-    <p class="section-sub" style="color:#6ea89e;">The end-to-end journey of a request — from origination to delivery and feedback.</p>
-    <div class="flow-steps">
-      <div class="step"><div class="snum">1</div><h4>Requests Originate</h4><p>BUs submit feature &amp; ops requests. <em style="color:#60a5fa;">Separately</em>, the internal DT Team surfaces proactive strategic initiatives.</p></div>
-      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="step"><div class="snum">2</div><h4>Backlog Intake</h4><p>Business PO gathers BU requests. App Dev PO gathers both <strong style="color:#93c5fd;">BU feature requests</strong> and <strong style="color:#5eead4;">DT strategic initiatives</strong>.</p></div>
-      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="step"><div class="snum">3</div><h4>Sprint Planning</h4><p>POs and Champions <strong style="color:#fbbf24;">collaborate</strong> to approve and prioritize backlog items together — ensuring business alignment and capacity planning.</p></div>
-      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="step"><div class="snum">4</div><h4>Finalize Priority</h4><p>Approved and sequenced work is ready for assignment. App Dev PO balances reactive BU demand against proactive DT projects.</p></div>
-      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="step"><div class="snum">5</div><h4>Assign to Pod</h4><p>Work assigned to the right pod based on BU or app domain.</p></div>
-      <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="step"><div class="snum">6</div><h4>Deliver</h4><p>BA &amp; SA execute; output delivered back to BU or app.</p></div>
-      <div class="step-arrow"><i class="fa-solid fa-arrow-rotate-left"></i></div>
-      <div class="step feedback"><div class="snum"><i class="fa-solid fa-arrow-rotate-left"></i></div><h4>Feedback Loop</h4><p>Completed work triggers new requests; PO is notified.</p></div>
-    </div>
-  </section>
-
-  <!-- ============ CAPACITY ALLOCATION ============ -->
-  <section class="section cap-section">
-    <div class="section-head"><span class="bar"></span><h2>Capacity Allocation Strategy</h2></div>
-    <p class="section-sub">How each PO divides pod capacity into fixed "buckets" so no single type of work dominates.</p>
-    <div class="cap-intro">
-      <i class="fa-solid fa-lightbulb"></i>
-      <div>POs don't just rank requests 1–100. They reserve a <strong style="color:#93c5fd;">percentage of capacity</strong> for each category of work — guaranteeing technical health and innovation aren't crowded out by business demand. Percentages are a starting point, tuned each planning cycle.</div>
-    </div>
-
-    <!-- Capacity bucket legend -->
-    <div class="rgt-legend">
-      <div class="rgt-item"><span class="swatch sw-blue"></span><b>Business Growth / Pain Points</b><span class="rgt-def">High-impact requests from the 4 Business Units (new apps, workflow fixes)</span></div>
-      <div class="rgt-item"><span class="swatch sw-teal"></span><b>Technical Enablement / Debt</b><span class="rgt-def">Requests from Dev/Data teams that make future work faster or safer (API cleanup, data ingestion)</span></div>
-      <div class="rgt-item"><span class="swatch sw-amber"></span><b>Operational Support</b><span class="rgt-def">Keeping the current dashboards and apps running</span></div>
-      <div class="rgt-item"><span class="swatch sw-purple"></span><b>Innovation / Discovery</b><span class="rgt-def">High-risk, high-reward technical ideas that need a "mini-discovery" by the BA/SA pod</span></div>
-    </div>
-
-    <div class="cap-grid">
-      <!-- Business PO allocation -->
-      <div class="cap-card">
-        <div class="cap-head">
-          <div class="cicon"><i class="fa-solid fa-user-tie"></i></div>
-          <div>
-            <div class="ctitle2">Business PO</div>
-            <div class="csub2">Pods 1–4 · BUs 1–4</div>
-          </div>
-        </div>
-        <p class="cap-tension">Skews to business demand — no large migration backlog pushing on this track.</p>
-        <div class="cap-bar">
-          <div class="cap-seg seg-blue" style="flex:60;"><span>60%</span></div>
-          <div class="cap-seg seg-teal" style="flex:20;"><span>20%</span></div>
-          <div class="cap-seg seg-amber" style="flex:10;"><span>10%</span></div>
-          <div class="cap-seg seg-purple" style="flex:10;"><span>10%</span></div>
-        </div>
-        <div class="cap-rows">
-          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">60%</div><div class="rtext"><b>Business Growth / Pain Points</b><span>Workflow fixes &amp; process improvements across BUs 1–4</span></div></div>
-          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">20%</div><div class="rtext"><b>Technical Enablement / Debt</b><span>Data cleanup &amp; integrations that speed future work</span></div></div>
-          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">10%</div><div class="rtext"><b>Operational Support</b><span>Keeping current processes &amp; tools running (KTLO)</span></div></div>
-          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">10%</div><div class="rtext"><b>Innovation / Discovery</b><span>Mini-discovery spikes on new business ideas</span></div></div>
-        </div>
-      </div>
-
-      <!-- App Dev PO allocation -->
-      <div class="cap-card teal-card">
-        <div class="cap-head">
-          <div class="cicon"><i class="fa-solid fa-code-branch"></i></div>
-          <div>
-            <div class="ctitle2">App Dev PO</div>
-            <div class="csub2">Pod 5 · 5 Apps + DT Team</div>
-          </div>
-        </div>
-        <p class="cap-tension">Balances two competing streams — reactive BU features vs. proactive DT initiatives.</p>
-        <div class="cap-bar">
-          <div class="cap-seg seg-blue" style="flex:60;"><span>60%</span></div>
-          <div class="cap-seg seg-teal" style="flex:20;"><span>20%</span></div>
-          <div class="cap-seg seg-amber" style="flex:10;"><span>10%</span></div>
-          <div class="cap-seg seg-purple" style="flex:10;"><span>10%</span></div>
-        </div>
-        <div class="cap-rows">
-          <div class="cap-row"><div class="swatch sw-blue"></div><div class="rpct">60%</div><div class="rtext"><b>Business Growth / Pain Points <span style="color:#60a5fa;font-weight:700;">· BU-pull</span></b><span>New features across Galaxy, Evo Edge, Evo Automate, Amp Edge, Sigma</span></div></div>
-          <div class="cap-row"><div class="swatch sw-teal"></div><div class="rpct">20%</div><div class="rtext"><b>Technical Enablement / Debt <span style="color:#2dd4bf;font-weight:700;">· DT-push</span></b><span>Platform migrations, version upgrades &amp; DT Roadmap projects</span></div></div>
-          <div class="cap-row"><div class="swatch sw-amber"></div><div class="rpct">10%</div><div class="rtext"><b>Operational Support</b><span>Keeping the 5 apps running — bug fixes, patches, KTLO</span></div></div>
-          <div class="cap-row"><div class="swatch sw-purple"></div><div class="rpct">10%</div><div class="rtext"><b>Innovation / Discovery</b><span>High-risk/high-reward spikes &amp; CI mini-discovery by BA/SA</span></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cap-note">
-      <i class="fa-solid fa-shield-halved"></i>
-      <p><strong>Why buckets, not a single ranked list:</strong> The allocation is the guardrail that operationalizes the two-PO split. It prevents big migration projects from consuming all of Pod 5, and stops business features from starving the tech debt that keeps the apps alive — making "DT can't be ignored, but also can't hijack the transformation" a measurable commitment rather than a hope.</p>
-    </div>
-  </section>
 
 
 </div>
